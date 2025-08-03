@@ -1,0 +1,495 @@
+/* -------------------------------------------------------------------------------------------------- */
+/* Variables                                                                                         */
+/* -------------------------------------------------------------------------------------------------- */
+
+:root {
+	--rosewater: rgb(245, 224, 220);
+	--flamingo: rgb(242, 205, 205);
+	--pink: rgb(245, 194, 231);
+	--mauve: rgb(203, 166, 247);
+	--red: rgb(243, 139, 168);
+	--maroon: rgb(235, 160, 172);
+	--peach: rgb(250, 179, 135);
+	--yellow: rgb(249, 226, 175);
+	--green: rgb(166, 227, 161);
+	--teal: rgb(148, 226, 213);
+	--sky: rgb(137, 220, 235);
+	--sapphire: rgb(116, 199, 236);
+	--blue: rgb(137, 180, 250);
+	--lavender: rgb(180, 190, 254);
+	--text: rgb(205, 214, 244);
+	--subtext1: rgb(186, 194, 222);
+	--subtext0: rgb(166, 173, 200);
+	--overlay2: rgb(147, 153, 178);
+	--overlay1: rgb(127, 132, 156);
+	--overlay0: rgb(108, 112, 134);
+	--surface2: rgb(88, 91, 112);
+	--surface1: rgb(69, 71, 90);
+	--surface0: rgb(40, 41, 54);
+	--base: rgba(30, 30, 46, 0.8);
+	--mantle: rgba(24, 24, 37, 0.8);
+	--crust: rgba(17, 17, 27, 0.8);
+	--radius: 6px;
+	--border: 1px solid var(--overlay0);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 1. Layout and Containers                                                                           */
+/* -------------------------------------------------------------------------------------------------- */
+
+* {
+	font-size: 12px;
+	color: var(--text);
+	font-weight: 900;
+	font-family: 'JetBrainsMono NFP';
+}
+
+.yasb-bar {
+	background-color: var(--base);
+	border-width: 1 0 0 0;
+	border-style: solid;
+	border-color: var(--surface1);
+}
+
+.widget {
+	padding: 0 5px;
+	margin: 8px 2px;
+	background-color: var(--base);
+	border: 1px solid var(--surface1);
+	border-radius: var(--radius);
+}
+
+.widget .icon {
+	padding: 0 4px;
+}
+
+.widget .label {
+	padding: 2px 6px 2px 6px;
+}
+
+.widget .label.alt {
+	padding: 2px 8px 2px 8px;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+/* 3. Widgets                                                                                         */
+/* -------------------------------------------------------------------------------------------------- */
+
+/***-------------------------------      • Komorebi Widgets •      --------------------------------***/
+
+/*---===< Komorebi Control Widget >===---*/
+.komorebi-control-widget {
+	margin-left: 4px;
+}
+
+.komorebi-control-widget .label {
+	font-size: 14px;
+	color: #cdd6f4;
+	font-weight: 600;
+}
+
+/*---===< Komorebi Control >===---*/
+.komorebi-control-menu {
+	background-color: var(--mantle);
+}
+
+.komorebi-control-menu .button {
+	background-color: var(--base);
+	border: 1px solid var(--overlay0);
+	color: var(--text);
+	border-radius: var(--radius);
+	padding: 8px 16px;
+	font-size: 32px;
+}
+
+.komorebi-control-menu .button.active {
+	background-color: var(--base);
+	border: 1px solid var(--overlay0);
+	color: var(--mauve);
+}
+
+.komorebi-control-menu .button:disabled,
+.komorebi-control-menu .button.active:disabled {
+	background-color: var(--crust);
+	color: var(--surface0);
+}
+
+.komorebi-control-menu .footer .text {
+	font-size: 12px;
+	color: var(--mauve);
+}
+
+/*---===< Komorebi Layout Switcher >===---*/
+.komorebi-active-layout .label {
+	font-size: 20px;
+}
+
+.komorebi-layout-menu {
+	background-color: var(--mantle);
+	color: var(--text);
+}
+
+.komorebi-layout-menu .menu-item {
+	padding: 4px 8px;
+	font-size: 12px;
+	color: var(--text);
+	font-weight: 600;
+}
+
+.komorebi-layout-menu .menu-item-icon {
+	font-size: 18px;
+}
+
+.komorebi-layout-menu .menu-item-text {
+	font-size: 12px;
+}
+
+.komorebi-layout-menu .menu-item-text:hover {
+	color: var(--mauve);
+}
+
+.komorebi-layout-menu .menu-item:hover {
+	background-color: var(--base);
+	border: 1px solid var(--surface0);
+}
+
+.komorebi-layout-menu .separator {
+	max-height: 1px;
+	background-color: var(--overlay0);
+}
+
+/*---===< Komorebi Workspace >===---*/
+.komorebi-workspaces .ws-btn {
+	border: 3px solid transparent;
+	background-color: var(--surface1);
+	margin: 0 2px;
+	font-size: 0px;
+	color: transparent;
+	width: 10px;
+	height: 10px;
+	border-radius: 8px;
+}
+
+.komorebi-workspaces .ws-btn.populated {
+	background-color: var(--overlay1);
+}
+
+.komorebi-workspaces .ws-btn.active {
+	color: transparent;
+	background-color: var(--mauve);
+	width: 20px;
+	max-width: 20px;
+}
+
+.komorebi-workspaces .ws-btn:hover {
+	border: none;
+}
+
+/*---===< Komorebi Stack >===---*/
+.komorebi-stack .widget-container {
+	background-color: transparent;
+	border-radius: var(--radius);
+}
+
+.komorebi-stack .window {
+	background-color: transparent;
+	border: none;
+	margin: 0px 2px;
+	padding: 2px 2px;
+}
+
+.komorebi-stack .label {
+	color: var(--mauve);
+	background-color: var(--mantle);
+	border: 1px solid var(--surface0);
+	border-radius: var(--radius);
+	height: auto;
+	margin: 4 0;
+}
+
+/***---------------------------------      • System Widgets •      ----------------------------------***/
+
+/*---===< Audio Widget >===---*/
+.audio-menu {
+	background-color: var(--mantle);
+}
+
+.audio-container .device {
+	background-color: var(--crust);
+	border: 1px solid var(--overlay0);
+	padding: 6px 8px 6px 4px;
+	margin: 2px 0;
+	font-size: 12px;
+	border-radius: var(--radius);
+}
+
+.audio-container .device.selected {
+	background-color: var(--base);
+	border: 1px solid var(--overlay0);
+	color: var(--mauve);
+}
+
+.audio-container .device:hover {
+	background-color: var(--base);
+	border: 1px solid var(--mauve);
+	color: var(--text);
+}
+
+/*---===< Volume Slider >===---*/
+volume-slider {
+	height: 10px;
+	margin: 5px 4px;
+	border-radius: 5px;
+}
+
+.volume-slider::groove {
+    background: transparent;
+	height: 8px;
+	border-radius: 4px;
+	background: var(--surface0);
+}
+
+.volume-slider::groove:hover {
+	height: 10px;
+	border-radius: 5px;
+	background: var(--surface1);
+}
+
+.volume-slider::sub-page {
+	background: var(--mauve);
+	border-radius: 4px;
+	height: 8px;
+}
+
+.volume-slider::handle {
+	background: transparent;
+}
+
+/*---===< Media Widget >===---*/
+.media-widget .label {
+	color: var(--text);
+}
+
+.media-menu {
+	background-color: var(--mantle);
+    width: 500px;
+    max-width: 500px;
+}
+
+/* Media Source Styles - The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase.
+Example: "Windows Media" becomes "windows-media" */
+.media-menu .source {
+	margin-top: 10px;
+	border-radius: var(--radius);
+	padding: 0px;
+}
+
+.media-menu .source.firefox {
+	background-color: var(--maroon);
+	color: #313244;
+}
+
+.media-menu .source.spotify {
+	background-color: var(--green);
+	color: #313244;
+}
+
+.media-menu .source.edge {
+	background-color: var(--sky);
+	color: #313244;
+}
+
+.media-menu .source.windows-media {
+	background-color: var(--blue);
+	color: #313244;
+}
+
+.media-menu .btn {
+    text-align: center;
+	font-size: 20px;
+	font-weight: 400;
+	margin: 5px 0px 0px 0px;
+	min-width: 40px;
+	max-width: 40px;
+	min-height: 40px;
+	max-height: 40px;
+	border-radius: 20px;
+	color: var(--overlay0);
+}
+
+.media-menu .btn.prev {
+	margin-left: 75px;
+}
+
+.media-menu .btn.play {
+	font-size: 28px;
+    color: var(--overlay1);
+}
+
+.media-menu .btn:hover {
+	color: var(--mauve);
+}
+
+.media-menu .title,
+.media-menu .artist,
+.media-menu .source {
+	font-size: 14px;
+	font-weight: 600;
+	margin-left: 10px;
+}
+
+.media-menu .artist {
+	color: var(--mauve);
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.media-menu .playback-time {
+    background-color: transparent;
+    margin-top: 10px;
+	font-size: 13px;
+	color: var(--mauve);
+	min-width: 100px;
+}
+
+/*---===< Progress Slider >===---*/
+.media-menu .progress-slider {
+	height: 10px;
+	margin: 5px 4px;
+	border-radius: 5px;
+}
+
+.media-menu .progress-slider::groove {
+    background: transparent;
+	height: 8px;
+	border-radius: 4px;
+	background: var(--surface0);
+}
+
+.media-menu .progress-slider::groove:hover {
+	height: 10px;
+	border-radius: 5px;
+	background: var(--surface1);
+}
+
+.media-menu .progress-slider::sub-page {
+	background: var(--mauve);
+	border-radius: 4px;
+	height: 8px;
+}
+
+/*---===< Calendar Widget >===---*/
+.calendar {
+	background-color: var(--mantle);
+}
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+	background-color: transparent;
+	color: var(--subtext0);
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+	background-color: var(--base);
+	border: 1px solid var(--overlay0);
+	border-radius: var(--radius);
+	color: var(--mauve);
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+	font-size: 16px;
+	color: var(--mauve);
+	font-weight: 700;
+	min-width: 180px;
+	max-width: 180px;
+}
+
+.calendar .month-label {
+	font-weight: normal;
+	padding-bottom: 12px;
+}
+
+.calendar .date-label {
+	font-size: 88px;
+	font-weight: 900;
+	color: var(--text);
+	margin-top: -20px;
+}
+
+/*---===< System Tray Widget >===---*/
+.systray .unpinned-container {
+	background-color: var(--mantle);
+	border-radius: var(--radius);
+	margin: 2px;
+	border: 1px solid var(--surface0);
+}
+
+.systray .pinned-container {
+	background: transparent;
+}
+
+.systray .button {
+	margin: 1px;
+	border-radius: var(--radius);
+	padding: 2px 2px;
+}
+
+.systray .button:hover {
+	background: var(--base);
+	border: 1px solid var(--mauve);
+}
+
+.systray .button[dragging='true'] {
+	background: var(--overlay2);
+	border-color: var(--mauve);
+}
+
+.systray .unpinned-visibility-btn {
+	background: var(--mantle);
+	border: 1px solid var(--surface0);
+	border-radius: var(--radius);
+	height: 24px;
+	width: 12px;
+}
+
+.systray .unpinned-visibility-btn:hover {
+	background: var(--base);
+	border: 1px solid var(--mauve);
+}
+
+/*---===< Notification Widget >===---*/
+.notification-widget {
+	padding: 0px -5px 0px 0px;
+	margin-right: 4px;
+}
+
+.notification-widget .icon {
+	color: var(--overlay0);
+}
+
+.notification-widget .label {
+	color: var(--overlay0);
+}
+
+.notification-widget .icon.new-notification {
+	color: var(--overlay2);
+}
+
+.notification-widget .label.new-notification {
+	color: var(--mauve);
+}
+
+/* --------------------------------------------------------------------------------------------------- */
+/* 6. Icons & Typography                                                                               */
+/* --------------------------------------------------------------------------------------------------- */
+
+.icon {
+	font-size: 20px;
+	color: var(--text);
+}

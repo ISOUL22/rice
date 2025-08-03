@@ -1,0 +1,287 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "pwsh  komorebic start --config '$Env:KOMOREBI_CONFIG_HOME'"
+  stop_command: "pwsh komorebic stop"
+  reload_command: "pwsh komorebic stop && komorebic start --config '$Env:KOMOREBI_CONFIG_HOME'"
+bars:
+  status-bar:
+    enabled: true
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "bottom" 
+      center: false
+    animation:
+      enabled: true
+      duration: 400
+    blur_effect:
+      enabled: true
+      acrylic: false
+      dark_mode: false
+      round_corners: false
+      border_color: "#45475a"
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 49
+    padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    widgets:
+      left:
+        [
+          "komorebi_control",
+          "komorebi_active_layout",
+          "komorebi_workspaces",
+          "komorebi_stack",
+          "media"
+        ]
+      center:
+        [
+        ]
+      right:
+        [
+          "volume",
+          "systray",
+          "clock",
+          "notifications"
+        ]
+widgets:
+  komorebi_control:
+      type: "komorebi.control.KomorebiControlWidget"
+      options:
+        label: "<span>\udb84\udc47</span>"
+        icons:
+          start: "\uead3"
+          stop: "\uead7"
+          reload: "\uead2"
+        run_ahk: false
+        run_whkd: true
+        show_version: true
+        komorebi_menu:
+          blur: true
+          round_corners: True
+          round_corners_type: 'normal'
+          border_color: '#45475a'
+          alignment: 'left'
+          direction: 'up'
+          offset_top: 5
+          offset_left: 5
+  komorebi_active_layout:
+    type: "komorebi.active_layout.ActiveLayoutWidget"
+    options:
+      hide_if_offline: true
+      label: "{icon}"
+      layouts: ['bsp', 'columns', 'rows', 'grid', 'scrolling', 'vertical_stack', 'horizontal_stack', 'ultrawide_vertical_stack','right_main_vertical_stack']
+      layout_icons:
+        bsp: "\uebeb"
+        columns: "\uebf7"
+        rows: "\uec01"
+        grid: "\udb81\udf58"
+        scrolling: "\uebf7"
+        vertical_stack: "\uebee"
+        horizontal_stack: "\uebf0"
+        ultrawide_vertical_stack: "\uebee"
+        right_main_vertical_stack: "\uebf1"
+        monocle: "\uf06f"
+        maximized: "\uf06f"
+        floating: "\uf2d2"
+        paused: "\udb83\udf89"
+        tiling: "\udb81\ude40"
+      callbacks:
+        on_left: 'toggle_layout_menu'
+        on_middle: 'next_layout'
+        on_right: 'prev_layout'
+      layout_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "#45475a"
+        alignment: "left"
+        direction: "up"
+        offset_top: 5
+        show_layout_icons: true
+      container_padding: 
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Waiting for Komorebi..."
+      label_workspace_btn: "\udb81\udc3d"
+      label_workspace_active_btn: "\udb81\udc3e"
+      label_workspace_populated_btn: "\udb81\udc3e"
+      label_default_name: ""
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: false
+      animation: true
+      container_padding: 
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+  komorebi_stack:
+    type: "komorebi.stack.StackWidget"
+    options:
+      label_offline: "offline"
+      label_window: "{index}"
+      label_window_active: "{process}"
+      label_no_window: ""
+      label_zero_index: false
+      show_icons: "always"
+      icon_size: 14
+      max_length: 30
+      max_length_active: 30
+      max_length_ellipsis: ".."
+      hide_if_offline: true
+      show_only_stack: false
+      animation: true
+      enable_scroll_switching : true
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "<span>\uf001</span> {title}"
+      label_alt: "<span>\ued35</span> {artist}"
+      hide_empty: true
+      callbacks:
+       on_left: "toggle_media_menu"
+       on_middle: "toggle_label"
+       on_right: "toggle_play_pause"
+      max_field_size:
+        label: 55
+        label_alt: 60
+      controls_hide: true
+      show_thumbnail: false
+      media_menu:
+       blur: true
+       round_corners: true
+       round_corners_type: "normal"
+       border_color: "#45475a"
+       alignment: "right"
+       direction: "up"
+       offset_top: 5
+       thumbnail_corner_radius: 6
+       thumbnail_size: 100
+       max_title_size: 80
+       max_artist_size: 20
+       show_source: true
+      media_menu_icons:
+       play: "\uf04b"
+       pause: "\uf04c"
+       prev_track: "\uf048"
+       next_track: "\uf051"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      tooltip: false
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      volume_icons:
+        - "\ueee8" 
+        - "\uf026"
+        - "\uf027" 
+        - "\uf027"  
+        - "\uf028"
+      audio_menu:
+        blur: true
+        round_corners: True
+        round_corners_type: 'normal'
+        border_color: '#45475a'
+        alignment: 'right'
+        direction: 'up'
+        offset_top: 5
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      tooltip: false
+      class_name: "systray"
+      label_collapsed: "\uf0d9"
+      label_expanded: "\uf0da"
+      label_position: "left" # Can be "left" or "right"
+      icon_size: 16 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: false
+      container_padding:
+          left: 0
+          top: 0
+          right: 0
+          bottom: 0
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      tooltip: false
+      label: "<span>\udb83\ude17</span> {%a %b %d} | <span>{icon}</span> {%I:%M %p}"
+      label_alt: "{%d.%m.%y %H:%M}"
+      locale: ""
+      update_interval: 1000
+      timezones: []
+      icons:
+        clock_00 : "\udb81\udcb2"
+        clock_01 : "\udb81\udcb2"
+        clock_02 : "\udb81\udcb2"
+        clock_03 : "\udb81\udcb2"
+        clock_04 : "\udb81\udcb2"
+        clock_05 : "\ue386"
+        clock_06 : "\ue387"
+        clock_07 : "\ue388"
+        clock_08 : "\ue389"
+        clock_09 : "\ue38A"
+        clock_10 : "\ue38B"
+        clock_11 : "\ue38C"
+        clock_12 : "\ue381"
+        clock_13 : "\ue382"
+        clock_14 : "\ue383"
+        clock_15 : "\ue384"
+        clock_16 : "\ue385"
+        clock_17 : "\ue386"
+        clock_18 : "\ue387"
+        clock_19 : "\ue388"
+        clock_20 : "\ue389"
+        clock_21 : "\udb81\udcb2"
+        clock_22 : "\udb81\udcb2"
+        clock_23 : "\udb81\udcb2"
+      calendar: 
+        blur: true
+        round_corners: True
+        round_corners_type: "normal"
+        border_color: "#45475a"
+        alignment: "right"
+        direction: "up"
+        offset_top: 5
+        show_week_numbers: True
+      callbacks:
+        on_left: "toggle_calendar"
+        on_middle: "toggle_label"
+        on_right: "do_nothing"
+  notifications:
+    type: "yasb.notifications.NotificationsWidget"
+    options:
+      tooltip: false
+      label: "<span>\uf476</span> {count}"
+      label_alt: "{count} notifications"
+      hide_empty: false
+      callbacks:
+        on_left: "toggle_notification"
+        on_right: "toggle_label"
+        on_middle: "do_nothing"
+      container_padding:
+        top: 0
+        left: 8
+        bottom: 0
+        right: 8

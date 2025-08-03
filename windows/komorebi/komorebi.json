@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.37/schema.json",
+  "app_specific_configuration_path": "C:/Users/IoAng/.config/komorebi/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 2,
+  "default_container_padding": 1,
+  "border": true,
+  "border_width": 2,
+  "border_offset": -1,
+  "transparency": true,
+  "transparency_alpha": 254,
+  "stackbar": {
+    "mode": "Never"
+  },
+  "theme": {
+    "palette": "Catppuccin",
+    "name": "Mocha",
+    "unfocused_border": "Crust",
+    "floating_border": "Crust",
+    "single_border": "Mauve",
+    "stack_border": "Sky",
+    "monocle_border": "Pink",
+    "bar_accent": "Mauve"
+  },
+  "animation": {
+    "enabled": true,
+    "duration": 200,
+    "fps": 60,
+    "style": "EaseInSine"
+  },
+  "display_index_preferences": {
+    "0": "AUS25AB-5&1b028b77&1&UID4352",
+    "1": "HWP331E-5&24b21d0d&2&UID257"
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "2",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "3",
+          "layout": "Grid"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "A",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "B",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "C",
+          "layout": "Grid"
+        }
+      ]
+    }
+  ],
+  "ignore_rules": [
+    {
+      "kind": "Exe",
+      "id": "Neurolings.exe",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Flow.Launcher.exe",
+      "matching_strategy": "Equals"
+    }
+  ]
+}
