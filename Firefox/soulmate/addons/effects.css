@@ -1,0 +1,67 @@
+/* Extension and url bar icon tweaks */
+/* Extension icons */
+.webextension-browser-action .toolbarbutton-icon,
+.webextension-page-action .toolbarbutton-icon {
+    filter: grayscale(100%) brightness(0.8) contrast(1.1);
+    transition: filter 0.3s ease;
+}
+
+.webextension-browser-action:hover .toolbarbutton-icon,
+.webextension-page-action:hover .toolbarbutton-icon {
+    filter: none;
+}
+
+/* Hide some urlbar icons */
+#identity-box,
+#tracking-protection-icon-container,
+#permissions-granted-icon,
+#star-button-box {
+    display: none !important;
+}
+/* Hide back and forward buttons */
+:root:not([customizing]) #back-button {
+    display: none !important;
+}
+
+:root:not([customizing]) #forward-button {
+    display: none !important;
+}
+
+/*--------------------*/
+
+/* Tab Effects */
+/* Tab switch animation */
+#tabbrowser-tabpanels > hbox {
+    transition: all 0.15s cubic-bezier(0.175, 0.885, 0.3, 1.3),
+        filter 0.15s ease-in-out, opacity 0.2s ease-in-out !important;
+    scale: 0.9 !important;
+    opacity: 0;
+}
+
+#tabbrowser-tabpanels > hbox.deck-selected {
+    scale: 1 !important;
+    opacity: 1 !important;
+}
+
+/* Animate new tab */
+#vertical-pinned-tabs-container,
+#tabbrowser-arrowscrollbox {
+    .tabbrowser-tab {
+        animation: new-tab-appear 0.25s ease-out !important;
+    }
+}
+
+@keyframes new-tab-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Fade out unloaded tab */
+.tabbrowser-tab[pending='true'] {
+    filter: grayscale(1);
+    opacity: 0.5;
+}
+
+/*--------------------*/

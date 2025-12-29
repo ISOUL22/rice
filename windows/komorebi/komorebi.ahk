@@ -1,71 +1,62 @@
-﻿#Requires AutoHotkey v2.0.2
-#SingleInstance Force
+﻿global komorebic := "C:\Program Files\komorebi\bin\komorebic-no-console.exe " ; change this path to the komorebi folder.
+~LWin::Send "{Blind}{vkE8}" ;disable normal windows key but keep windows key combinnations work
+; #q::
+; {
+;     Run komorebic . "start"
+; }
 
-Komorebic(cmd) {
-    RunWait(format("komorebic.exe {}", cmd), , "Hide")
+; manage program
+#q::Run "C:\Users\" . A_UserName . "\AppData\Local\Microsoft\WindowsApps\wt.exe" ;run terminal
+#+r::Run komorebic . "retile"
+#+p::Run komorebic . "toggle-pause"
+#+o::
+{
+    Run komorebic . "stop"
+    Run komorebic . "start"
 }
+; manipulate windows
+#t::Run komorebic . "toggle-float"
+#+t::Run komorebic . "toggle-monocle"
 
-!q::Komorebic("close")
-!m::Komorebic("minimize")
+; create workspaces
+#!+n::Run komorebic . "new-workspace"
 
-; Focus windows
-!h::Komorebic("focus left")
-!j::Komorebic("focus down")
-!k::Komorebic("focus up")
-!l::Komorebic("focus right")
+; workspaces
+#1::Run komorebic . "focus-workspace 0"
+#2::Run komorebic . "focus-workspace 1"
+#3::Run komorebic . "focus-workspace 2"
+#4::Run komorebic . "focus-workspace 3"
+#5::Run komorebic . "focus-workspace 4"
+#6::Run komorebic . "focus-workspace 5"
+#7::Run komorebic . "focus-workspace 6"
+#8::Run komorebic . "focus-workspace 7"
 
-!+[::Komorebic("cycle-focus previous")
-!+]::Komorebic("cycle-focus next")
+; move windows across workspaces
+#+1::Run komorebic . "move-to-workspace 0"
+#+2::Run komorebic . "move-to-workspace 1"
+#+3::Run komorebic . "move-to-workspace 2"
+#+4::Run komorebic . "move-to-workspace 3"
+#+5::Run komorebic . "move-to-workspace 4"
+#+6::Run komorebic . "move-to-workspace 5"
+#+7::Run komorebic . "move-to-workspace 6"
+#+8::Run komorebic . "move-to-workspace 7"
 
-; Move windows
-!+h::Komorebic("move left")
-!+j::Komorebic("move down")
-!+k::Komorebic("move up")
-!+l::Komorebic("move right")
+; change focus windows
+#Left::Run komorebic . "focus left"
+#Down::Run komorebic . "focus down"
+#Right::Run komorebic . "focus right"
+#Up::Run komorebic . "focus up"
 
-; Stack windows
-!Left::Komorebic("stack left")
-!Down::Komorebic("stack down")
-!Up::Komorebic("stack up")
-!Right::Komorebic("stack right")
-!;::Komorebic("unstack")
-![::Komorebic("cycle-stack previous")
-!]::Komorebic("cycle-stack next")
+; move windows
+#+Left::Run komorebic . "move left"
+#+Down::Run komorebic . "move down"
+#+Right::Run komorebic . "move right"
+#+Up::Run komorebic . "move up"
 
-; Resize
-!=::Komorebic("resize-axis horizontal increase")
-!-::Komorebic("resize-axis horizontal decrease")
-!+=::Komorebic("resize-axis vertical increase")
-!+_::Komorebic("resize-axis vertical decrease")
+; flip layouts
+#x::Run komorebic . "flip-layout horizontal"
+#y::Run komorebic . "flip-layout vertical"
 
-; Manipulate windows
-!t::Komorebic("toggle-float")
-!f::Komorebic("toggle-monocle")
-
-; Window manager options
-!+r::Komorebic("retile")
-!p::Komorebic("toggle-pause")
-
-; Layouts
-!x::Komorebic("flip-layout horizontal")
-!y::Komorebic("flip-layout vertical")
-
-; Workspaces
-!1::Komorebic("focus-workspace 0")
-!2::Komorebic("focus-workspace 1")
-!3::Komorebic("focus-workspace 2")
-!4::Komorebic("focus-workspace 3")
-!5::Komorebic("focus-workspace 4")
-!6::Komorebic("focus-workspace 5")
-!7::Komorebic("focus-workspace 6")
-!8::Komorebic("focus-workspace 7")
-
-; Move windows across workspaces
-!+1::Komorebic("move-to-workspace 0")
-!+2::Komorebic("move-to-workspace 1")
-!+3::Komorebic("move-to-workspace 2")
-!+4::Komorebic("move-to-workspace 3")
-!+5::Komorebic("move-to-workspace 4")
-!+6::Komorebic("move-to-workspace 5")
-!+7::Komorebic("move-to-workspace 6")
-!+8::Komorebic("move-to-workspace 7")
+; TODO: handle mouse scrolling
+#WheelDown::Run komorebic . "cycle-workspace next"
+#WheelUp::Run komorebic . "cycle-workspace previous"

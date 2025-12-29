@@ -3,31 +3,33 @@
   "app_specific_configuration_path": "C:/Users/IoAng/.config/komorebi/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
+  "toggle_float_placement": "CenterAndResize",
+  "floating_window_aspect_ratio": "Ultrawide",
   "default_workspace_padding": 2,
   "default_container_padding": 1,
   "border": true,
-  "border_width": 2,
+  "border_width": 3,
   "border_offset": -1,
-  "transparency": true,
-  "transparency_alpha": 254,
+  "transparency": false,
+  "transparency_alpha": 250,
   "stackbar": {
     "mode": "Never"
   },
   "theme": {
     "palette": "Catppuccin",
     "name": "Mocha",
-    "unfocused_border": "Crust",
-    "floating_border": "Crust",
+    "unfocused_border": "Mantle",
+    "floating_border": "Sky",
     "single_border": "Mauve",
-    "stack_border": "Sky",
-    "monocle_border": "Pink",
+    "stack_border": "Lavender",
+    "monocle_border": "Flamingo",
     "bar_accent": "Mauve"
   },
   "animation": {
     "enabled": true,
-    "duration": 200,
+    "duration": 60,
     "fps": 60,
-    "style": "EaseInSine"
+    "style": "EaseInOutSine"
   },
   "display_index_preferences": {
     "0": "AUS25AB-5&1b028b77&1&UID4352",
@@ -38,15 +40,15 @@
       "workspaces": [
         {
           "name": "1",
-          "layout": "VerticalStack"
+          "layout": "RightMainVerticalStack"
         },
         {
           "name": "2",
-          "layout": "UltrawideVerticalStack"
+          "layout": "VerticalStack"
         },
         {
           "name": "3",
-          "layout": "Grid"
+          "layout": "Scrolling"
         }
       ]
     },
@@ -54,7 +56,7 @@
       "workspaces": [
         {
           "name": "A",
-          "layout": "UltrawideVerticalStack"
+          "layout": "RightMainVerticalStack"
         },
         {
           "name": "B",
@@ -62,7 +64,7 @@
         },
         {
           "name": "C",
-          "layout": "Grid"
+          "layout": "Scrolling"
         }
       ]
     }

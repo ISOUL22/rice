@@ -2,9 +2,9 @@ watch_stylesheet: true
 watch_config: true
 debug: false
 komorebi:
-  start_command: "pwsh  komorebic start --config '$Env:KOMOREBI_CONFIG_HOME'"
+  start_command: "pwsh komorebic start"
   stop_command: "pwsh komorebic stop"
-  reload_command: "pwsh komorebic stop && komorebic start --config '$Env:KOMOREBI_CONFIG_HOME'"
+  reload_command: "pwsh komorebic stop && komorebic start"
 bars:
   status-bar:
     enabled: true
@@ -36,9 +36,7 @@ bars:
     widgets:
       left:
         [
-          "komorebi_control",
-          "komorebi_active_layout",
-          "komorebi_workspaces",
+          "komorebi-grouper",
           "komorebi_stack",
           "media"
         ]
@@ -47,15 +45,24 @@ bars:
         ]
       right:
         [
-          "volume",
           "systray",
-          "clock",
-          "notifications"
+          "system-grouper",
         ]
 widgets:
+# left aligned
+  komorebi-grouper:
+    type: "yasb.grouper.GrouperWidget"
+    options:
+      class_name: "komorebi-grouper"
+      widgets: [
+        "komorebi_control",
+        "komorebi_active_layout",
+        "komorebi_workspaces"
+      ]
   komorebi_control:
       type: "komorebi.control.KomorebiControlWidget"
       options:
+        config_path: "C:/Users/IoAng/.config/komorebi/komorebi.json"
         label: "<span>\udb84\udc47</span>"
         icons:
           start: "\uead3"
@@ -71,8 +78,8 @@ widgets:
           border_color: '#45475a'
           alignment: 'left'
           direction: 'up'
-          offset_top: 5
-          offset_left: 5
+          offset_top: 9
+          offset_left: -5
   komorebi_active_layout:
     type: "komorebi.active_layout.ActiveLayoutWidget"
     options:
@@ -105,13 +112,8 @@ widgets:
         border_color: "#45475a"
         alignment: "left"
         direction: "up"
-        offset_top: 5
+        offset_top: 9
         show_layout_icons: true
-      container_padding: 
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   komorebi_workspaces:
     type: "komorebi.workspaces.WorkspaceWidget"
     options:
@@ -124,11 +126,6 @@ widgets:
       hide_empty_workspaces: false
       hide_if_offline: false
       animation: true
-      container_padding: 
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   komorebi_stack:
     type: "komorebi.stack.StackWidget"
     options:
@@ -138,7 +135,7 @@ widgets:
       label_no_window: ""
       label_zero_index: false
       show_icons: "always"
-      icon_size: 14
+      icon_size: 18
       max_length: 30
       max_length_active: 30
       max_length_ellipsis: ".."
@@ -149,16 +146,16 @@ widgets:
   media:
     type: "yasb.media.MediaWidget"
     options:
-      label: "<span>\uf001</span> {title}"
-      label_alt: "<span>\ued35</span> {artist}"
+      label: "\uf001 {title}"
+      label_alt: "\ued35 {artist}"
       hide_empty: true
       callbacks:
        on_left: "toggle_media_menu"
        on_middle: "toggle_label"
        on_right: "toggle_play_pause"
       max_field_size:
-        label: 55
-        label_alt: 60
+        label: 35
+        label_alt: 30
       controls_hide: true
       show_thumbnail: false
       media_menu:
@@ -168,7 +165,7 @@ widgets:
        border_color: "#45475a"
        alignment: "right"
        direction: "up"
-       offset_top: 5
+       offset_top: 9
        thumbnail_corner_radius: 6
        thumbnail_size: 100
        max_title_size: 80
@@ -179,29 +176,16 @@ widgets:
        pause: "\uf04c"
        prev_track: "\uf048"
        next_track: "\uf051"
-  volume:
-    type: "yasb.volume.VolumeWidget"
+# right aligned
+  system-grouper:
+    type: "yasb.grouper.GrouperWidget"
     options:
-      tooltip: false
-      label: "<span>{icon}</span> {level}"
-      label_alt: "{volume}"
-      volume_icons:
-        - "\ueee8" 
-        - "\uf026"
-        - "\uf027" 
-        - "\uf027"  
-        - "\uf028"
-      audio_menu:
-        blur: true
-        round_corners: True
-        round_corners_type: 'normal'
-        border_color: '#45475a'
-        alignment: 'right'
-        direction: 'up'
-        offset_top: 5
-      callbacks:
-        on_left: "toggle_volume_menu"
-        on_right: "exec cmd.exe /c start ms-settings:sound"
+      class_name: "system-grouper"
+      widgets: [
+        "clock",
+        "volume",
+        "notifications"
+      ]
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -209,24 +193,19 @@ widgets:
       class_name: "systray"
       label_collapsed: "\uf0d9"
       label_expanded: "\uf0da"
-      label_position: "left" # Can be "left" or "right"
-      icon_size: 16 # Can be any integer between 8 and 64
-      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      label_position: "left"
+      icon_size: 16
+      pin_click_modifier: "alt"
       show_unpinned: false
       show_unpinned_button: true
       show_battery: false
       show_volume: false
       show_network: false
-      container_padding:
-          left: 0
-          top: 0
-          right: 0
-          bottom: 0
   clock:
     type: "yasb.clock.ClockWidget"
     options:
       tooltip: false
-      label: "<span>\udb83\ude17</span> {%a %b %d} | <span>{icon}</span> {%I:%M %p}"
+      label: "<span>\udb83\ude17</span> {%a %b %d} <span>{icon}</span> {%I:%M %p}"
       label_alt: "{%d.%m.%y %H:%M}"
       locale: ""
       update_interval: 1000
@@ -263,12 +242,34 @@ widgets:
         border_color: "#45475a"
         alignment: "right"
         direction: "up"
-        offset_top: 5
+        offset_top: 9
         show_week_numbers: True
       callbacks:
         on_left: "toggle_calendar"
         on_middle: "toggle_label"
         on_right: "do_nothing"
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      tooltip: false
+      label: "<span>{icon}</span> {level}"
+      volume_icons:
+        - "\ueee8" 
+        - "\uf026"
+        - "\uf027" 
+        - "\uf027"  
+        - "\uf028"
+      audio_menu:
+        blur: true
+        round_corners: True
+        round_corners_type: 'normal'
+        border_color: '#45475a'
+        alignment: 'right'
+        direction: 'up'
+        offset_top: 9
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -280,8 +281,3 @@ widgets:
         on_left: "toggle_notification"
         on_right: "toggle_label"
         on_middle: "do_nothing"
-      container_padding:
-        top: 0
-        left: 8
-        bottom: 0
-        right: 8

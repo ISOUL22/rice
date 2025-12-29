@@ -1,0 +1,51 @@
+/* A bunch of tweaks and changes(by Soul) to Natsumi Browser(https://github.com/greeeen-dev/natsumi-browser) */
+
+/* Addons */
+@import url(addons/window-controls.css);
+@import url(addons/extensions.css);
+@import url(addons/effects.css);
+/* Natsumi Tweaks */
+@import url(addons/tabs.css);
+@import url(addons/compact-mode.css);
+
+/* Custom Font */
+@-moz-document url-prefix("chrome:") {
+    * {
+        font-family: 'JetBrains Mono' !important;
+    }
+}
+
+/* Accent color */
+@media -moz-pref('natsumi.theme.accent-color', 'mauve') {
+    * {
+        --natsumi-custom-primary-color: #cba6f7;
+    }
+}
+
+/* ==== Theme: Soulmate ==== */
+@media -moz-pref('natsumi.theme.type', 'soulmate') {
+    :root[windowtype*='navigator:browser'] {
+        body::after {
+            opacity: 1 !important;
+            background: rgba(30, 30, 46, 0.2) !important;
+        }
+
+        #browser::before {
+            opacity: 1 !important;
+            background: rgba(30, 30, 46, 0.2) !important;
+        }
+
+        @media -moz-pref('natsumi.theme.gray-out-when-inactive') {
+            &:-moz-window-inactive {
+                body::after {
+                    background: rgb(24, 24, 37) !important;
+                }
+            }
+        }
+    }
+    /* Pop-up Menus */
+    panel {
+        --panel-background: rgba(24, 24, 37, 0.97) !important;
+        transition: opacity 0.2s ease !important;
+    }
+}

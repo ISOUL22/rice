@@ -1,0 +1,31 @@
+/* Extensions menu */
+.unified-extensions-item-message-deck {
+    visibility: collapse !important;
+}
+
+#unified-extensions-view {
+    --uei-icon-size: 16px; /*  Change icon size */
+}
+#unified-extensions-view:before {
+    content: 'Extensions';
+    text-align: center !important;
+    font-weight: bold !important;
+    padding: 9px !important;
+}
+
+#unified-extensions-view .panel-header,
+#unified-extensions-view .panel-header .panel-header-icon,
+#unified-extensions-view
+    #unified-extensions-manage-extensions
+    .toolbarbutton-icon,
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton {
+    visibility: collapse !important;
+}
+
+#unified-extensions-view
+    #unified-extensions-manage-extensions
+    .toolbarbutton-text {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}

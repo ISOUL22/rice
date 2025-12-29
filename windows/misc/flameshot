@@ -1,0 +1,19 @@
+[General]
+buttons=@Variant(\0\0\0\x7f\0\0\0\vQList<int>\0\0\0\0\x11\0\0\0\0\0\0\0\x1\0\0\0\x2\0\0\0\x3\0\0\0\x4\0\0\0\x5\0\0\0\x6\0\0\0\x12\0\0\0\xf\0\0\0\x13\0\0\0\b\0\0\0\n\0\0\0\v\0\0\0\f\0\0\0\x11\0\0\0\x14\0\0\0\x15)
+contrastOpacity=153
+contrastUiColor=#c98ef9
+copyOnDoubleClick=true
+copyPathAfterSave=false
+drawColor=#cba6f7
+drawThickness=9
+predefinedColorPaletteLarge=false
+saveAsFileExtension=jpeg
+saveLastRegion=true
+savePath=C:/Users/IoAng/Pictures/Saved Pictures
+savePathFixed=false
+showHelp=false
+showStartupLaunchMessage=false
+startupLaunch=true
+uiColor=#655d8e
+useJpgForClipboard=false
+userColors=picker, #f5e0dc, #f2cdcd, #f5c2e7, #cba6f7, #f38ba8, #eba0ac, #fab387, #f9e2af, #a6e3a1, #94e2d5, #89dceb, #74c7ec, #89b4fa, #b4befe, #000000, #ffffff
