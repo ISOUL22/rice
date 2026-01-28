@@ -30,7 +30,8 @@
     --mantle: rgba(24, 24, 37, 0.8);
     --crust: rgba(17, 17, 27, 0.8);
     --radius: 6px;
-    --border: 1px solid var(--overlay0);
+    --widgetBorder: 1px solid var(--surface1);
+    --buttonBorder: 1px solid var(--overlay0);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -46,16 +47,14 @@
 
 .yasb-bar {
     background-color: var(--base);
-    border-width: 1 0 0 0;
-    border-style: solid;
-    border-color: var(--surface1);
+    border-top: 1px solid var(--surface1);
 }
 
 .widget {
     padding: 0 5px;
     margin: 6px 2px;
     background-color: var(--base);
-    border: 1px solid var(--surface1);
+    border: var(--widgetBorder);
     border-radius: var(--radius);
 }
 
@@ -71,10 +70,6 @@
     padding: 2px 8px 2px 8px;
 }
 
-QPushButton {
-    outline: none;
-}
-
 /* -------------------------------------------------------------------------------------------------- */
 /* Widgets                                                                                            */
 /* -------------------------------------------------------------------------------------------------- */
@@ -88,17 +83,31 @@ QPushButton {
 
 /*---===< Komorebi Control Widget >===---*/
 .komorebi-control-widget {
-    padding: 0;
-    margin: 0;
     background-color: transparent;
     border: none;
     border-radius: var(--radius);
+    margin: 0 3px;
+    padding: 0;
 }
 
-.komorebi-control-widget .label {
-    font-size: 14px;
-    color: #cdd6f4;
-    font-weight: 600;
+.komorebi-control-widget .widget-container {
+    border-radius: var(--radius);
+    margin: 3px 0;
+}
+
+.komorebi-control-widget .widget-container:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
+    border-radius: var(--radius);
+}
+
+.komorebi-control-widget .icon {
+    font-size: 22px;
+    padding: 0 3px;
+}
+
+.komorebi-control-widget .icon:hover {
+    color: var(--blue);
 }
 
 /*---===< Komorebi Control Menu >===---*/
@@ -108,8 +117,8 @@ QPushButton {
 
 .komorebi-control-menu .button {
     background-color: var(--base);
-    border: 1px solid var(--overlay0);
-    color: var(--text);
+    color: var(--surface0);
+    border: var(--buttonBorder);
     border-radius: var(--radius);
     padding: 8px 16px;
     font-size: 32px;
@@ -117,48 +126,73 @@ QPushButton {
 
 .komorebi-control-menu .button.active {
     background-color: var(--base);
-    border: 1px solid var(--overlay0);
+    border: var(--buttonBorder);
+}
+
+.komorebi-control-menu .button.start.active {
+    color: var(--mauve);
+}
+.komorebi-control-menu .button.stop.active {
+    color: var(--maroon);
+}
+.komorebi-control-menu .button.reload.active {
     color: var(--mauve);
 }
 
-.komorebi-control-menu .button:disabled,
-.komorebi-control-menu .button.active:disabled {
-    background-color: var(--crust);
+.komorebi-control-menu .button:disabled {
+    background-color: var(--base);
     color: var(--surface0);
 }
 
-.komorebi-control-menu .button:hover {
+.komorebi-control-menu .button.active:hover {
     background-color: var(--surface0);
+    color: var(--blue);
+    border: 1px solid var(--mauve);
 }
 
 .komorebi-control-menu .footer .text {
     font-size: 12px;
-    color: var(--mauve);
+    color: var(--subtext0);
 }
 
 /*---===< Komorebi Layout Widget >===---*/
 .komorebi-active-layout {
-    padding: 0;
-    margin: 0;
     background-color: transparent;
     border: none;
     border-radius: var(--radius);
+    margin: 0 3px;
+    padding: 0;
+}
+
+.komorebi-active-layout .widget-container {
+    border-radius: var(--radius);
+    margin: 3px 0;
+}
+
+.komorebi-active-layout .widget-container:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
 }
 
 .komorebi-active-layout .label {
-    font-size: 20px;
+    font-size: 22px;
+    padding: 0 3px;
+}
+
+.komorebi-active-layout .label:hover {
+    color: var(--blue);
 }
 
 /*---===< Komorebi Layout Menu >===---*/
 .komorebi-layout-menu {
     background-color: var(--mantle);
-    color: var(--text);
 }
 
 .komorebi-layout-menu .menu-item {
-    padding: 4px 8px;
+    border-radius: var(--radius);
+    padding: 0 5px;
+    margin: 4px;
     font-size: 12px;
-    color: var(--text);
     font-weight: 600;
 }
 
@@ -167,12 +201,17 @@ QPushButton {
 }
 
 .komorebi-layout-menu .menu-item-text {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .komorebi-layout-menu .menu-item:hover {
-    background-color: var(--base);
+    background-color: var(--surface0);
     border: 1px solid var(--mauve);
+}
+
+.komorebi-layout-menu .menu-item-icon:hover,
+.komorebi-layout-menu .menu-item-text:hover {
+    color: var(--blue);
 }
 
 .komorebi-layout-menu .separator {
@@ -183,9 +222,14 @@ QPushButton {
 /*---===< Komorebi Workspace Widget >===---*/
 .komorebi-workspaces {
     background-color: var(--mantle);
+    border: var(--widgetBorder);
     border-radius: var(--radius);
-    margin: 3px 2px;
-    border: 1px solid var(--surface0);
+    margin: 3px 3px 3px 6px;
+}
+
+.komorebi-workspaces:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
 }
 
 .komorebi-workspaces .ws-btn,
@@ -197,7 +241,6 @@ QPushButton {
     margin: 2px;
     width: 10px;
     height: 10px;
-    max-height: 20px;
 }
 .komorebi-workspaces .ws-btn {
     background-color: var(--surface1);
@@ -214,8 +257,8 @@ QPushButton {
 }
 
 .komorebi-workspaces .ws-btn:hover {
-    background-color: var(--lavender);
-    border: 0px;
+    background-color: var(--blue);
+    border: 0px solid transparent;
 }
 
 /*---===< Komorebi Stack Widget >===---*/
@@ -231,135 +274,180 @@ QPushButton {
 }
 
 .komorebi-stack .window .icon {
-    margin: 3px;
+    margin-right: 3px;
 }
 
 .komorebi-stack .label {
-    color: var(--mauve);
     background-color: var(--mantle);
+    color: var(--mauve);
+    border: var(--widgetBorder);
     border-radius: var(--radius);
     margin: 2px 1px 2px 0;
-    border: 1px solid var(--surface0);
+}
+
+.komorebi-stack .label:hover {
+    background-color: var(--surface0);
+    color: var(--blue);
+    border: 1px solid var(--mauve);
 }
 
 /***---------------------------------      • Misc Widgets •      ----------------------------------***/
 
 /*---===< Media Widget >===---*/
+.media-widget:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
+}
+
+/*---===< Media Menu >===---*/
 .media-widget .label {
     color: var(--text);
 }
 
 .media-menu {
     background-color: var(--mantle);
-    width: 500px;
+    min-width: 500px;
     max-width: 500px;
 }
 
-/* Media Source Styles - The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase.
-Example: "Windows Media" becomes "windows-media" */
-.media-menu .source {
-    margin-top: 10px;
-    border-radius: var(--radius);
-    padding: 5px;
-}
-
-.media-menu .source.firefox {
-    background-color: var(--maroon);
-    color: #313244;
-}
-
-.media-menu .source.spotify {
-    background-color: var(--green);
-    color: #313244;
-}
-
-.media-menu .source.edge {
-    background-color: var(--sky);
-    color: #313244;
-}
-
-.media-menu .source.windows-media {
-    background-color: var(--blue);
-    color: #313244;
-}
-
-.media-menu .btn {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 400;
-    margin: 5px 0px 0px 0px;
-    min-width: 40px;
-    max-width: 40px;
-    min-height: 40px;
-    max-height: 40px;
-    border-radius: 20px;
-    color: var(--overlay0);
-}
-
-.media-menu .btn.prev {
-    margin-left: 58.5px;
-}
-
-.media-menu .btn.play {
-    font-size: 28px;
-    color: var(--overlay1);
-}
-
-.media-menu .btn.next {
-    margin-right: 58.5px;
-}
-
-.media-menu .btn:hover {
-    color: var(--mauve);
+.media-menu .thumbnail {
+    border: 1px solid var(--overlay1);
+    border-radius: 4px;
 }
 
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
     margin-left: 10px;
 }
 
+.media-menu .title {
+    border: var(--buttonBorder);
+    border-top: 1px solid var(--overlay1);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-width: 360px;
+    max-height: 2em;
+    min-width: 360px;
+    min-height: 2em;
+    padding: 2px;
+}
+
 .media-menu .artist {
-    color: var(--mauve);
-    font-weight: 700;
-    margin-top: 5px;
+    background-color: var(--lavender);
+    color: var(--surface0);
+    border: var(--buttonBorder);
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    margin-top: 0;
+    padding: 2px;
+}
+
+/* Media Source Styles - The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase.
+Example: "Windows Media" becomes "windows-media" */
+.media-menu .source {
+    color: var(--surface0);
+    border: var(--buttonBorder);
+    border-radius: var(--radius);
+    padding: 4px;
+}
+
+.media-menu .source.firefox {
+    background-color: var(--maroon);
+}
+
+.media-menu .source.spotify {
+    background-color: var(--green);
+}
+
+.media-menu .source.edge {
+    background-color: var(--sky);
+}
+
+.media-menu .source.windows-media {
+    background-color: var(--blue);
+}
+
+/*---===< Media Control Buttons >===---*/
+.media-menu .btn {
+    background-color: var(--base);
+    border: var(--buttonBorder);
+    color: var(--subtext0);
+    border-radius: var(--radius);
+    font-size: 20px;
+    font-weight: 400;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    margin-top: 3px;
+}
+
+.media-menu .btn.prev {
+    margin-left: 86px; /*centered buttons hack*/
+}
+
+.media-menu .btn.play {
+    color: var(--text);
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.media-menu .btn.next {
+}
+
+.media-menu .btn:disabled {
+    background-color: var(--crust);
+    color: var(--surface0);
+}
+
+.media-menu .btn:hover {
+    background-color: var(--surface0);
+    color: var(--blue);
+    border: 1px solid var(--mauve);
 }
 
 .media-menu .playback-time {
     background-color: transparent;
-    margin-top: 10px;
-    font-size: 13px;
-    color: var(--mauve);
+    color: var(--subtext1);
+    font-size: 12px;
+    margin: 4px 0;
     min-width: 100px;
 }
 
 /*---===< Source Progress Slider >===---*/
 .media-menu .progress-slider {
-    height: 12px;
-    margin: 5px 4px;
-    border-radius: var(--radius);
+    margin: 4px 0;
 }
 
 .media-menu .progress-slider::groove {
-    height: 12px;
+    background-color: var(--mantle);
+    border: var(--buttonBorder);
     border-radius: var(--radius);
-    background-color: var(--crust);
-    border: 1px solid var(--surface1);
+    height: 20px;
 }
 
 .media-menu .progress-slider::groove:hover {
-    height: 12px;
-    border-radius: var(--radius);
-    background-color: var(--surface1);
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
 }
 
 .media-menu .progress-slider::sub-page {
-    background-color: var(--overlay1);
-    border-radius: var(--radius);
-    border: 6px solid transparent;
-    height: 12px;
+    background-color: var(--mauve);
+    border-radius: 4px;
+    height: 2px;
+    margin: 5px;
+}
+
+.media-menu .progress-slider::handle {
+    background-color: transparent;
 }
 
 /***---------------------------------      • System Widgets •      ----------------------------------***/
@@ -382,9 +470,9 @@ Example: "Windows Media" becomes "windows-media" */
 /*---===< System Tray Widget >===---*/
 .systray .unpinned-container {
     background-color: var(--mantle);
+    border: var(--widgetBorder);
     border-radius: var(--radius);
     margin: 3px;
-    border: 1px solid var(--surface0);
 }
 
 .systray .pinned-container {
@@ -392,30 +480,35 @@ Example: "Windows Media" becomes "windows-media" */
 }
 
 .systray .button {
-    margin: 1px;
+    background: transparent;
+    border: none;
     border-radius: var(--radius);
     padding: 2px;
+    margin: 2px;
 }
 
 .systray .button:hover {
-    background-color: var(--base);
+    background-color: var(--surface0);
     border: 1px solid var(--mauve);
 }
 
 .systray .button[dragging='true'] {
-    background-color: var(--overlay2);
+    background-color: var(--blue);
 }
 
 .systray .unpinned-visibility-btn {
-    background-color: var(--mantle);
-    border: 1px solid var(--surface0);
+    background-color: var(--base);
+    color: var(--text);
+    border: var(--widgetBorder);
     border-radius: var(--radius);
     height: 24px;
     width: 12px;
+    margin-left: 3px;
 }
 
 .systray .unpinned-visibility-btn:hover {
-    background-color: var(--base);
+    background-color: var(--surface0);
+    color: var(--blue);
     border: 1px solid var(--mauve);
 }
 
@@ -423,53 +516,90 @@ Example: "Windows Media" becomes "windows-media" */
 .clock-widget {
     background-color: var(--mantle);
     border-radius: var(--radius);
-    margin: 2px 1px 2px 0;
-    border: 1px solid var(--surface0);
+    margin: 3px 1px 3px 3px;
+    border: var(--widgetBorder);
     padding: 0 5px;
 }
 
+.clock-widget:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
+}
+
 /*---===< Calendar Menu >===---*/
-.calendar {
+.clock-popup.calendar {
     background-color: var(--mantle);
 }
 
-.calendar .calendar-table,
-.calendar .calendar-table::item {
+.clock-popup.calendar .calendar-table,
+.clock-popup.calendar .calendar-table::item {
     background-color: transparent;
-    color: var(--subtext0);
-    margin: 0;
-    padding: 0;
+    color: var(--subtext1);
     border: none;
     outline: none;
 }
 
-.calendar .calendar-table::item:selected {
+.clock-popup.calendar .calendar-table::item:selected {
     background-color: var(--base);
-    border: 1px solid var(--overlay0);
+    border: var(--buttonBorder);
     border-radius: var(--radius);
     color: var(--mauve);
 }
 
-.calendar .day-label,
-.calendar .month-label,
-.calendar .date-label {
-    font-size: 16px;
-    color: var(--mauve);
+.clock-popup.calendar .day-label,
+.clock-popup.calendar .month-label,
+.clock-popup.calendar .year-label {
     font-weight: 700;
-    min-width: 180px;
-    max-width: 180px;
+    min-width: 130px;
+    max-width: 130px;
 }
 
-.calendar .month-label {
-    font-weight: normal;
-    padding-bottom: 12px;
+.clock-popup.calendar .day-label {
+    color: var(--mauve);
+    font-size: 20px;
 }
 
-.calendar .date-label {
-    font-size: 88px;
-    font-weight: 900;
+.clock-popup.calendar .month-label {
+    color: var(--subtext1);
+    font-size: 16px;
+}
+
+.clock-popup.calendar .year-label {
+    color: var(--subtext0);
+    font-size: 12px;
+}
+
+.clock-popup.calendar .date-label {
     color: var(--text);
-    margin-top: -20px;
+    font-size: 90px;
+    font-weight: 900;
+    margin-top: -15px;
+    padding: 0;
+}
+
+.clock-popup.calendar .week-label {
+    color: var(--subtext0);
+    font-size: 12px;
+    padding: 0;
+}
+
+/*---===< Volume Widget >===---*/
+.volume-widget .widget-container {
+    border-radius: var(--radius);
+    margin: 3px;
+}
+
+.volume-widget .widget-container:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
+}
+
+.volume-widget .icon {
+    font-size: 16px;
+}
+
+.volume-widget .icon:hover {
+    color: var(--blue);
 }
 
 /*---===< Audio Menu >===---*/
@@ -478,10 +608,10 @@ Example: "Windows Media" becomes "windows-media" */
 }
 
 .audio-container .device {
-    background-color: var(--mantle);
-    border: 1px solid var(--overlay0);
-    border-radius: var(--radius);
+    background-color: var(--base);
     color: var(--subtext0);
+    border: var(--buttonBorder);
+    border-radius: var(--radius);
     padding: 2px 4px;
     margin: 2px 0;
     font-size: 12px;
@@ -489,24 +619,31 @@ Example: "Windows Media" becomes "windows-media" */
 
 .audio-container .device.selected {
     background-color: var(--base);
-    border: 1px solid var(--overlay0);
+    border: var(--buttonBorder);
     color: var(--text);
 }
 
 .audio-container .device:hover {
+    background-color: var(--surface0);
+    color: var(--blue);
     border: 1px solid var(--mauve);
-    color: var(--text);
 }
 
 /* System Volume Slider */
+.volume-slider {
+    margin: 4px 0;
+}
+
 .volume-slider::groove {
     background-color: var(--mantle);
-    border: 1px solid var(--overlay0);
+    border: var(--buttonBorder);
     border-radius: var(--radius);
     height: 20px;
 }
 
 .volume-slider::groove:hover {
+    background-color: var(--surface0);
+    color: var(--blue);
     border: 1px solid var(--mauve);
 }
 
@@ -514,7 +651,7 @@ Example: "Windows Media" becomes "windows-media" */
     background-color: var(--mauve);
     border-radius: 4px;
     height: 2px;
-    margin: 6px;
+    margin: 5px;
 }
 
 .volume-slider::handle {
@@ -523,22 +660,23 @@ Example: "Windows Media" becomes "windows-media" */
 
 /* App Volumes Toggle Button */
 .audio-menu .toggle-apps {
-    background-color: var(--mantle);
-    border: 1px solid var(--overlay0);
+    background-color: var(--base);
+    color: var(--text);
+    border: var(--buttonBorder);
     border-radius: var(--radius);
-    color: var(--subtext0);
     padding: 2px 4px;
     margin: 4px 0 4px 6px;
     font-size: 12px;
 }
 .audio-menu .toggle-apps.expanded {
     background-color: var(--base);
-    border: 1px solid var(--overlay0);
+    border: var(--buttonBorder);
     color: var(--text);
 }
 .audio-menu .toggle-apps:hover {
+    background-color: var(--surface0);
+    color: var(--blue);
     border: 1px solid var(--mauve);
-    color: var(--text);
 }
 
 /* Container for application volumes */
@@ -546,7 +684,7 @@ Example: "Windows Media" becomes "windows-media" */
     text-align: center;
     background-color: var(--mantle);
     border-radius: var(--radius);
-    border: 1px solid var(--overlay0);
+    border: var(--buttonBorder);
     padding: 1px 4px;
     margin: 2px 1px 2px 0;
 }
@@ -567,6 +705,10 @@ Example: "Windows Media" becomes "windows-media" */
 }
 
 /* App Volume Slider */
+.audio-menu .apps-container .app-volume .app-slider {
+    margin: 4px 0;
+}
+
 .audio-menu .apps-container .app-volume .app-slider::groove {
     background-color: var(--mantle);
     border: 1px solid var(--overlay1);
@@ -575,14 +717,16 @@ Example: "Windows Media" becomes "windows-media" */
 }
 
 .audio-menu .apps-container .app-volume .app-slider::groove:hover {
+    background-color: var(--surface0);
+    color: var(--blue);
     border: 1px solid var(--mauve);
 }
 
 .audio-menu .apps-container .app-volume .app-slider::sub-page {
-    background-color: var(--overlay2);
+    background-color: var(--lavender);
     border-radius: 4px;
     height: 2px;
-    margin: 6px;
+    margin: 5px;
 }
 
 .audio-menu .apps-container .app-volume .app-slider::handle {
@@ -591,8 +735,22 @@ Example: "Windows Media" becomes "windows-media" */
 
 /*---===< Notification Widget >===---*/
 
+.notification-widget .widget-container {
+    border-radius: var(--radius);
+    margin: 3px;
+}
+
+.notification-widget .widget-container:hover {
+    background-color: var(--surface0);
+    border: 1px solid var(--mauve);
+}
+
 .notification-widget .icon {
     font-size: 16px;
+}
+
+.notification-widget .icon:hover {
+    color: var(--blue);
 }
 
 .notification-widget .label {
@@ -622,7 +780,7 @@ Example: "Windows Media" becomes "windows-media" */
 
 .context-menu {
     background-color: var(--base);
-    border: 1px solid var(--surface1);
+    border: var(--widgetBorder);
     border-radius: 10px;
 }
 
@@ -633,37 +791,47 @@ Example: "Windows Media" becomes "windows-media" */
     padding-right: 6px;
 }
 
+.context-menu::separator {
+    background-color: var(--surface1);
+    margin: 4px 0;
+    height: 1px;
+}
+
+/* Label */
 .context-menu::item,
 .context-menu .menu-checkbox {
-    background-color: transparent;
+    color: var(--text);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
     padding: 4px;
     margin: 2px;
-    border-radius: var(--radius);
 }
 
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    background-color: var(--surface1);
-    color: var(--mauve);
-}
-
-.context-menu::separator {
-    height: 1px;
-    background-color: var(--overlay1);
-    margin: 4px 8px;
+    background-color: var(--surface0);
+    color: var(--blue);
+    border: 1px solid var(--mauve);
 }
 
 .context-menu::item:disabled {
     color: var(--subtext0);
-    background-color: transparent;
 }
 
 .context-menu .menu-checkbox .checkbox {
-    border: none;
-    padding: 4px;
-    font-size: 12px;
-    margin: 0;
     color: var(--text);
+    border: none;
+    font-size: 12px;
+    padding: 4px;
+    margin: 2px;
+}
+
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--subtext0);
+}
+
+.context-menu .menu-checkbox .checkbox:hover {
+    color: var(--blue);
 }
 
 .context-menu .submenu::item:disabled {
@@ -671,33 +839,22 @@ Example: "Windows Media" becomes "windows-media" */
     padding-left: 16px;
 }
 
-.context-menu .menu-checkbox .checkbox:unchecked {
-    color: var(--subtext0);
-}
-
+/* Checkbox */
 .context-menu .menu-checkbox .checkbox::indicator {
-    border: 2px solid var(--overlay2);
-    border-radius: var(--radius);
+    border: 1px solid transparent;
+    border-radius: 7px;
     width: 12px;
     height: 12px;
     margin-right: 1px;
+    margin-left: 3px;
 }
 
 .context-menu .menu-checkbox .checkbox::indicator:unchecked {
-    background: var(--overlay0);
-    border-radius: var(--radius);
+    background-color: var(--surface1);
+    color: var(--blue);
 }
 
 .context-menu .menu-checkbox .checkbox::indicator:checked {
-    background: var(--mauve);
-    border-radius: var(--radius);
-}
-
-.context-menu .menu-checkbox .checkbox:focus {
-    outline: none;
-}
-
-.context-menu::item:checked {
     background-color: var(--mauve);
-    color: var(--text);
+    color: var(--blue);
 }
