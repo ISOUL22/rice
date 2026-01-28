@@ -114,7 +114,7 @@ widgets:
                 alignment: 'left'
                 direction: 'up'
                 offset_top: 9
-                offset_left: -34
+                offset_left: -41
                 show_layout_icons: true
     komorebi_workspaces:
         type: 'komorebi.workspaces.WorkspaceWidget'
@@ -168,7 +168,7 @@ widgets:
                 alignment: 'left'
                 direction: 'up'
                 offset_top: 2
-                offset_left: -354
+                offset_left: -303
                 thumbnail_corner_radius: 6
                 thumbnail_size: 100
                 max_title_size: 80
@@ -279,7 +279,7 @@ widgets:
                 alignment: 'right'
                 direction: 'up'
                 offset_top: 9
-                offset_left: 54
+                offset_left: 60
                 show_apps: true # Whether to show the list of applications with audio sessions
                 show_app_labels: true # Whether to show application labels in the audio menu
                 show_app_icons: true # Whether to show application icons in the audio menu
