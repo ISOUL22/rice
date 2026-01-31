@@ -14,16 +14,16 @@
 
 /* Shared button styles */
 .titlebar-button {
-    padding: 0 !important;
-    width: 13px !important;
-    height: 13px !important;
-    min-width: 13px !important;
-    min-height: 13px !important;
     align-self: center;
+    transition: all 100ms;
     margin-left: 11px !important;
     border-radius: 50px;
-    transition: all 100ms;
     background-color: rgba(127, 132, 156, 0.3) !important;
+    padding: 0 !important;
+    width: 13px !important;
+    min-width: 13px !important;
+    height: 13px !important;
+    min-height: 13px !important;
 }
 
 /* Solid button colors */

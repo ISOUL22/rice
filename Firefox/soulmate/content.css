@@ -12,8 +12,8 @@
             --in-content-page-background: #181825 !important;
         }
         .navigation {
-            padding-left: 0px !important;
             padding-right: 34px !important;
+            padding-left: 0px !important;
         }
     }
 
@@ -33,20 +33,20 @@
         }
 
         .search-wrapper .logo-and-wordmark .logo {
+            display: inline-block !important;
             background: url('zen-logo-mocha.svg'),
                 url('https://raw.githubusercontent.com/IAmJafeth/zen-browser/main/themes/Mocha/Mauve/zen-logo-mocha.svg')
                     no-repeat center !important;
-            display: inline-block !important;
-            height: 82px !important;
-            width: 82px !important;
             background-size: 82px !important;
+            width: 82px !important;
+            height: 82px !important;
         }
 
         @media (max-width: 609px) {
             .search-wrapper .logo-and-wordmark .logo {
                 background-size: 64px !important;
-                height: 64px !important;
                 width: 64px !important;
+                height: 64px !important;
             }
         }
 

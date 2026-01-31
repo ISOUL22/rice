@@ -7,10 +7,10 @@
     --uei-icon-size: 16px; /*  Change icon size */
 }
 #unified-extensions-view:before {
-    content: 'Extensions';
-    text-align: center !important;
-    font-weight: bold !important;
     padding: 9px !important;
+    content: 'Extensions';
+    font-weight: bold !important;
+    text-align: center !important;
 }
 
 #unified-extensions-view .panel-header,
