@@ -1,3 +1,6 @@
+# ⚠️ This project is undergoing a rewrite please check the new repo for updates ⚠️
+https://github.com/ISOUL22/soulmate
+
 # How to install:
 
 - in `about:config`

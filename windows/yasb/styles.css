@@ -3,35 +3,35 @@
 /* -------------------------------------------------------------------------------------------------- */
 
 :root {
-    --rosewater: rgb(245, 224, 220);
-    --flamingo: rgb(242, 205, 205);
-    --pink: rgb(245, 194, 231);
-    --mauve: rgb(203, 166, 247);
-    --red: rgb(243, 139, 168);
-    --maroon: rgb(235, 160, 172);
-    --peach: rgb(250, 179, 135);
-    --yellow: rgb(249, 226, 175);
-    --green: rgb(166, 227, 161);
-    --teal: rgb(148, 226, 213);
-    --sky: rgb(137, 220, 235);
-    --sapphire: rgb(116, 199, 236);
-    --blue: rgb(137, 180, 250);
-    --lavender: rgb(180, 190, 254);
-    --text: rgb(205, 214, 244);
-    --subtext1: rgb(186, 194, 222);
-    --subtext0: rgb(166, 173, 200);
-    --overlay2: rgb(147, 153, 178);
-    --overlay1: rgb(127, 132, 156);
-    --overlay0: rgb(108, 112, 134);
-    --surface2: rgb(88, 91, 112);
-    --surface1: rgb(69, 71, 90);
-    --surface0: rgb(40, 41, 54);
-    --base: rgba(30, 30, 46, 0.8);
-    --mantle: rgba(24, 24, 37, 0.8);
-    --crust: rgba(17, 17, 27, 0.8);
-    --radius: 6px;
-    --widgetBorder: 1px solid var(--surface1);
-    --buttonBorder: 1px solid var(--overlay0);
+  --rosewater: rgb(245, 224, 220);
+  --flamingo: rgb(242, 205, 205);
+  --pink: rgb(245, 194, 231);
+  --mauve: rgb(203, 166, 247);
+  --red: rgb(243, 139, 168);
+  --maroon: rgb(235, 160, 172);
+  --peach: rgb(250, 179, 135);
+  --yellow: rgb(249, 226, 175);
+  --green: rgb(166, 227, 161);
+  --teal: rgb(148, 226, 213);
+  --sky: rgb(137, 220, 235);
+  --sapphire: rgb(116, 199, 236);
+  --blue: rgb(137, 180, 250);
+  --lavender: rgb(180, 190, 254);
+  --text: rgb(205, 214, 244);
+  --subtext1: rgb(186, 194, 222);
+  --subtext0: rgb(166, 173, 200);
+  --overlay2: rgb(147, 153, 178);
+  --overlay1: rgb(127, 132, 156);
+  --overlay0: rgb(108, 112, 134);
+  --surface2: rgb(88, 91, 112);
+  --surface1: rgb(69, 71, 90);
+  --surface0: rgb(40, 41, 54);
+  --base: rgba(30, 30, 46, 0.8);
+  --mantle: rgba(24, 24, 37, 0.8);
+  --crust: rgba(17, 17, 27, 0.8);
+  --radius: 6px;
+  --widgetBorder: 1px solid var(--surface1);
+  --buttonBorder: 1px solid var(--overlay0);
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -39,35 +39,35 @@
 /* -------------------------------------------------------------------------------------------------- */
 
 * {
-    color: var(--text);
-    font-weight: 900;
-    font-size: 12px;
-    font-family: 'JetBrainsMono NFP';
+  color: var(--text);
+  font-weight: 900;
+  font-size: 12px;
+  font-family: "JetBrainsMono NFP";
 }
 
 .yasb-bar {
-    border-top: 1px solid var(--surface1);
-    background-color: var(--base);
+  border-top: 1px solid var(--surface1);
+  background-color: var(--base);
 }
 
 .widget {
-    margin: 6px 2px;
-    border: var(--widgetBorder);
-    border-radius: var(--radius);
-    background-color: var(--base);
-    padding: 0 5px;
+  margin: 6px 2px;
+  border: var(--widgetBorder);
+  border-radius: var(--radius);
+  background-color: var(--base);
+  padding: 0 5px;
 }
 
 .widget .icon {
-    padding: 0 4px;
+  padding: 0 4px;
 }
 
 .widget .label {
-    padding: 2px 6px 2px 6px;
+  padding: 2px 6px 2px 6px;
 }
 
 .widget .label.alt {
-    padding: 2px 8px 2px 8px;
+  padding: 2px 8px 2px 8px;
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -78,691 +78,691 @@
 
 /*---===< Komorebi Grouper Widget >===---*/
 .komorebi-grouper {
-    margin-left: 6px;
+  margin-left: 6px;
 }
 
 /*---===< Komorebi Control Widget >===---*/
 .komorebi-control-widget {
-    margin: 0 3px;
-    border: none;
-    border-radius: var(--radius);
-    background-color: transparent;
-    padding: 0;
+  margin: 0 3px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: transparent;
+  padding: 0;
 }
 
 .komorebi-control-widget .widget-container {
-    margin: 3px 0;
-    border-radius: var(--radius);
+  margin: 3px 0;
+  border-radius: var(--radius);
 }
 
 .komorebi-control-widget .widget-container:hover {
-    border: 1px solid var(--mauve);
-    border-radius: var(--radius);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  border-radius: var(--radius);
+  background-color: var(--surface0);
 }
 
 .komorebi-control-widget .icon {
-    padding: 0 3px;
-    font-size: 22px;
+  padding: 0 3px;
+  font-size: 22px;
 }
 
 .komorebi-control-widget .icon:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 /*---===< Komorebi Control Menu >===---*/
 .komorebi-control-menu {
-    background-color: var(--mantle);
+  background-color: var(--mantle);
 }
 
 .komorebi-control-menu .button {
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--base);
-    padding: 8px 16px;
-    color: var(--surface0);
-    font-size: 32px;
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--base);
+  padding: 8px 16px;
+  color: var(--surface0);
+  font-size: 32px;
 }
 
 .komorebi-control-menu .button.active {
-    border: var(--buttonBorder);
-    background-color: var(--base);
+  border: var(--buttonBorder);
+  background-color: var(--base);
 }
 
 .komorebi-control-menu .button.start.active {
-    color: var(--mauve);
+  color: var(--mauve);
 }
 .komorebi-control-menu .button.stop.active {
-    color: var(--maroon);
+  color: var(--maroon);
 }
 .komorebi-control-menu .button.reload.active {
-    color: var(--mauve);
+  color: var(--mauve);
 }
 
 .komorebi-control-menu .button:disabled {
-    background-color: var(--base);
-    color: var(--surface0);
+  background-color: var(--base);
+  color: var(--surface0);
 }
 
 .komorebi-control-menu .button.active:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 .komorebi-control-menu .footer .text {
-    color: var(--subtext0);
-    font-size: 12px;
+  color: var(--subtext0);
+  font-size: 12px;
 }
 
 /*---===< Komorebi Layout Widget >===---*/
 .komorebi-active-layout {
-    margin: 0 3px;
-    border: none;
-    border-radius: var(--radius);
-    background-color: transparent;
-    padding: 0;
+  margin: 0 3px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: transparent;
+  padding: 0;
 }
 
 .komorebi-active-layout .widget-container {
-    margin: 3px 0;
-    border-radius: var(--radius);
+  margin: 3px 0;
+  border-radius: var(--radius);
 }
 
 .komorebi-active-layout .widget-container:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 .komorebi-active-layout .label {
-    padding: 0 3px;
-    font-size: 22px;
+  padding: 0 3px;
+  font-size: 22px;
 }
 
 .komorebi-active-layout .label:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 /*---===< Komorebi Layout Menu >===---*/
 .komorebi-layout-menu {
-    background-color: var(--mantle);
+  background-color: var(--mantle);
 }
 
 .komorebi-layout-menu .menu-item {
-    margin: 4px;
-    border-radius: var(--radius);
-    padding: 0 5px;
-    font-weight: 600;
-    font-size: 12px;
+  margin: 4px;
+  border-radius: var(--radius);
+  padding: 0 5px;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .komorebi-layout-menu .menu-item-icon {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .komorebi-layout-menu .menu-item-text {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .komorebi-layout-menu .menu-item:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 .komorebi-layout-menu .menu-item-icon:hover,
 .komorebi-layout-menu .menu-item-text:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .komorebi-layout-menu .separator {
-    background-color: var(--overlay0);
-    max-height: 1px;
+  background-color: var(--overlay0);
+  max-height: 1px;
 }
 
 /*---===< Komorebi Workspace Widget >===---*/
 .komorebi-workspaces {
-    margin: 3px 3px 3px 6px;
-    border: var(--widgetBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
+  margin: 3px 3px 3px 6px;
+  border: var(--widgetBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
 }
 
 .komorebi-workspaces:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 .komorebi-workspaces .ws-btn,
 .komorebi-workspaces .ws-btn.populated,
 .komorebi-workspaces .ws-btn.active {
-    margin: 2px;
-    border: 3px solid transparent;
-    border-radius: 8px;
-    width: 10px;
-    height: 10px;
-    color: transparent;
+  margin: 2px;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  width: 10px;
+  height: 10px;
+  color: transparent;
 }
 .komorebi-workspaces .ws-btn {
-    background-color: var(--surface1);
+  background-color: var(--surface1);
 }
 
 .komorebi-workspaces .ws-btn.populated {
-    background-color: var(--overlay1);
+  background-color: var(--overlay1);
 }
 
 .komorebi-workspaces .ws-btn.active {
-    background-color: var(--mauve);
-    width: 28px;
-    max-width: 28px;
+  background-color: var(--mauve);
+  width: 28px;
+  max-width: 28px;
 }
 
 .komorebi-workspaces .ws-btn:hover {
-    border: 0px solid transparent;
-    background-color: var(--blue);
+  border: 0px solid transparent;
+  background-color: var(--blue);
 }
 
 /*---===< Komorebi Stack Widget >===---*/
 .komorebi-stack .widget-container {
-    border-radius: var(--radius);
-    background-color: transparent;
+  border-radius: var(--radius);
+  background-color: transparent;
 }
 
 .komorebi-stack .window {
-    margin: 3px 3px 3px 0px;
-    border: none;
-    background-color: transparent;
+  margin: 3px 3px 3px 0px;
+  border: none;
+  background-color: transparent;
 }
 
 .komorebi-stack .window .icon {
-    margin-right: 4px;
-    margin-left: -1px;
+  margin-right: 4px;
+  margin-left: -1px;
 }
 
 .komorebi-stack .label {
-    border: var(--widgetBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
-    color: var(--mauve);
+  border: var(--widgetBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
+  color: var(--mauve);
 }
 
 .komorebi-stack .label:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 /***---------------------------------      • Misc Widgets •      ----------------------------------***/
 
 /*---===< Media Widget >===---*/
 .media-widget:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 /*---===< Media Menu >===---*/
 .media-widget .label {
-    color: var(--text);
+  color: var(--text);
 }
 
 .media-menu {
-    background-color: var(--mantle);
-    min-width: 500px;
-    max-width: 500px;
+  background-color: var(--mantle);
+  min-width: 500px;
+  max-width: 500px;
 }
 
 .media-menu .thumbnail {
-    border: 1px solid var(--overlay1);
-    border-radius: 4px;
+  border: 1px solid var(--overlay1);
+  border-radius: 4px;
 }
 
 .media-menu .title,
 .media-menu .artist,
 .media-menu .source {
-    margin-left: 10px;
-    font-weight: 700;
-    font-size: 12px;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .media-menu .title {
-    border: var(--buttonBorder);
-    border-top: 1px solid var(--overlay1);
-    border-top-right-radius: var(--radius);
-    border-top-left-radius: var(--radius);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    padding: 2px;
-    min-width: 360px;
-    max-width: 360px;
-    min-height: 2em;
-    max-height: 2em;
+  border: var(--buttonBorder);
+  border-top: 1px solid var(--overlay1);
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 2px;
+  min-width: 360px;
+  max-width: 360px;
+  min-height: 2em;
+  max-height: 2em;
 }
 
 .media-menu .artist {
-    margin-top: 0;
-    border: var(--buttonBorder);
-    border-top: none;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
-    background-color: var(--lavender);
-    padding: 2px;
-    color: var(--surface0);
+  margin-top: 0;
+  border: var(--buttonBorder);
+  border-top: none;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  background-color: var(--lavender);
+  padding: 2px;
+  color: var(--surface0);
 }
 
 /* Media Source Styles - The source class name is the same as what you see in the media widget; just replace spaces with dashes and convert it to lowercase.
 Example: "Windows Media" becomes "windows-media" */
 .media-menu .source {
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    padding: 4px;
-    color: var(--surface0);
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  padding: 4px;
+  color: var(--surface0);
 }
 
 .media-menu .source.firefox {
-    background-color: var(--maroon);
+  background-color: var(--maroon);
 }
 
 .media-menu .source.spotify {
-    background-color: var(--green);
+  background-color: var(--green);
 }
 
 .media-menu .source.edge {
-    background-color: var(--sky);
+  background-color: var(--sky);
 }
 
 .media-menu .source.windows-media {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 
 /*---===< Media Control Buttons >===---*/
 .media-menu .btn {
-    margin-top: 3px;
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--base);
-    min-width: 35px;
-    max-width: 35px;
-    min-height: 35px;
-    max-height: 35px;
-    color: var(--subtext0);
-    font-weight: 400;
-    font-size: 20px;
+  margin-top: 3px;
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--base);
+  min-width: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  max-height: 35px;
+  color: var(--subtext0);
+  font-weight: 400;
+  font-size: 20px;
 }
 
 .media-menu .btn.prev {
-    margin-left: 86px; /*centered buttons hack*/
+  margin-left: 86px; /*centered buttons hack*/
 }
 
 .media-menu .btn.play {
-    margin-right: 4px;
-    margin-left: 4px;
-    color: var(--text);
+  margin-right: 4px;
+  margin-left: 4px;
+  color: var(--text);
 }
 
 .media-menu .btn.next {
 }
 
 .media-menu .btn:disabled {
-    background-color: var(--crust);
-    color: var(--surface0);
+  background-color: var(--crust);
+  color: var(--surface0);
 }
 
 .media-menu .btn:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 .media-menu .playback-time {
-    margin: 4px 0;
-    background-color: transparent;
-    min-width: 100px;
-    color: var(--subtext1);
-    font-size: 12px;
+  margin: 4px 0;
+  background-color: transparent;
+  min-width: 100px;
+  color: var(--subtext1);
+  font-size: 12px;
 }
 
 /*---===< Source Progress Slider >===---*/
 .media-menu .progress-slider {
-    margin: 4px 0;
+  margin: 4px 0;
 }
 
 .media-menu .progress-slider::groove {
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
-    height: 20px;
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
+  height: 20px;
 }
 
 .media-menu .progress-slider::groove:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 .media-menu .progress-slider::sub-page {
-    margin: 5px;
-    border-radius: 4px;
-    background-color: var(--mauve);
-    height: 2px;
+  margin: 5px;
+  border-radius: 4px;
+  background-color: var(--mauve);
+  height: 2px;
 }
 
 .media-menu .progress-slider::handle {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /***---------------------------------      • System Widgets •      ----------------------------------***/
 
 /*---===< System Grouper Widget >===---*/
 .system-grouper {
-    margin-right: 6px;
+  margin-right: 6px;
 }
 
 /*Grouped Widgets*/
 .volume-widget,
 .clock-widget,
 .notification-widget {
-    margin: 0;
-    border: none;
-    background-color: transparent;
-    padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  padding: 0;
 }
 
 /*---===< System Tray Widget >===---*/
 .systray .unpinned-container {
-    margin: 3px;
-    border: var(--widgetBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
+  margin: 2px 0px;
+  border: var(--widgetBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
 }
 
 .systray .pinned-container {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .systray .button {
-    margin: 2px;
-    border: none;
-    border-radius: var(--radius);
-    background: transparent;
-    padding: 2px;
+  margin: 3px;
+  border: none;
+  border-radius: var(--radius);
+  background: transparent;
+  padding: 2px;
 }
 
 .systray .button:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
-.systray .button[dragging='true'] {
-    background-color: var(--blue);
+.systray .button[dragging="true"] {
+  background-color: var(--blue);
 }
 
 .systray .unpinned-visibility-btn {
-    margin-left: 3px;
-    border: var(--widgetBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
-    width: 12px;
-    height: 24px;
-    color: var(--text);
+  margin: 2px 3px;
+  border: var(--widgetBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
+  width: 12px;
+  height: 26px;
+  color: var(--text);
 }
 
 .systray .unpinned-visibility-btn:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 /*---===< Clock Widget >===---*/
 .clock-widget {
-    margin: 3px 1px 3px 3px;
-    border: var(--widgetBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
-    padding: 0 5px;
+  margin: 3px;
+  border: var(--widgetBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
+  padding: 0 5px;
 }
 
 .clock-widget:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 /*---===< Calendar Menu >===---*/
 .clock-popup.calendar {
-    background-color: var(--mantle);
+  background-color: var(--mantle);
 }
 
 .clock-popup.calendar .calendar-table,
 .clock-popup.calendar .calendar-table::item {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    color: var(--subtext1);
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--subtext1);
 }
 
 .clock-popup.calendar .calendar-table::item:selected {
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--base);
-    color: var(--mauve);
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--base);
+  color: var(--mauve);
 }
 
 .clock-popup.calendar .day-label,
 .clock-popup.calendar .month-label,
 .clock-popup.calendar .year-label {
-    min-width: 130px;
-    max-width: 130px;
-    font-weight: 700;
+  min-width: 130px;
+  max-width: 130px;
+  font-weight: 700;
 }
 
 .clock-popup.calendar .day-label {
-    color: var(--mauve);
-    font-size: 20px;
+  color: var(--mauve);
+  font-size: 20px;
 }
 
 .clock-popup.calendar .month-label {
-    color: var(--subtext1);
-    font-size: 16px;
+  color: var(--subtext1);
+  font-size: 16px;
 }
 
 .clock-popup.calendar .year-label {
-    color: var(--subtext0);
-    font-size: 12px;
+  color: var(--subtext0);
+  font-size: 12px;
 }
 
 .clock-popup.calendar .date-label {
-    margin-top: -15px;
-    padding: 0;
-    color: var(--text);
-    font-weight: 900;
-    font-size: 90px;
+  margin-top: -15px;
+  padding: 0;
+  color: var(--text);
+  font-weight: 900;
+  font-size: 90px;
 }
 
 .clock-popup.calendar .week-label {
-    padding: 0;
-    color: var(--subtext0);
-    font-size: 12px;
+  padding: 0;
+  color: var(--subtext0);
+  font-size: 12px;
 }
 
 /*---===< Volume Widget >===---*/
 .volume-widget .widget-container {
-    margin: 3px;
-    border-radius: var(--radius);
+  margin: 3px 2px 3px 3px;
+  border-radius: var(--radius);
 }
 
 .volume-widget .widget-container:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 .volume-widget .icon {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .volume-widget .icon:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 /*---===< Audio Menu >===---*/
 .audio-menu {
-    background-color: var(--mantle);
+  background-color: var(--mantle);
 }
 
 .audio-container .device {
-    margin: 2px 0;
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--base);
-    padding: 2px 4px;
-    color: var(--subtext0);
-    font-size: 12px;
+  margin: 2px 0;
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--base);
+  padding: 2px 4px;
+  color: var(--subtext0);
+  font-size: 12px;
 }
 
 .audio-container .device.selected {
-    border: var(--buttonBorder);
-    background-color: var(--base);
-    color: var(--text);
+  border: var(--buttonBorder);
+  background-color: var(--base);
+  color: var(--text);
 }
 
 .audio-container .device:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 /* System Volume Slider */
 .volume-slider {
-    margin: 4px 0;
+  margin: 4px 0;
 }
 
 .volume-slider::groove {
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
-    height: 20px;
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
+  height: 20px;
 }
 
 .volume-slider::groove:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 .volume-slider::sub-page {
-    margin: 5px;
-    border-radius: 4px;
-    background-color: var(--mauve);
-    height: 2px;
+  margin: 5px;
+  border-radius: 4px;
+  background-color: var(--mauve);
+  height: 2px;
 }
 
 .volume-slider::handle {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /* App Volumes Toggle Button */
 .audio-menu .toggle-apps {
-    margin: 4px 0 4px 6px;
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--base);
-    padding: 2px 4px;
-    color: var(--text);
-    font-size: 12px;
+  margin: 4px 0 4px 6px;
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--base);
+  padding: 2px 4px;
+  color: var(--text);
+  font-size: 12px;
 }
 .audio-menu .toggle-apps.expanded {
-    border: var(--buttonBorder);
-    background-color: var(--base);
-    color: var(--text);
+  border: var(--buttonBorder);
+  background-color: var(--base);
+  color: var(--text);
 }
 .audio-menu .toggle-apps:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 /* Container for application volumes */
 .audio-menu .apps-container {
-    margin: 2px 1px 2px 0;
-    border: var(--buttonBorder);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
-    padding: 1px 4px;
-    text-align: center;
+  margin: 2px 1px 2px 0;
+  border: var(--buttonBorder);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
+  padding: 1px 4px;
+  text-align: center;
 }
 
 /* App Icon */
 .audio-menu .apps-container .app-volume .app-icon-container {
-    margin: 3px;
-    border-radius: var(--radius);
-    min-width: 20px;
-    max-width: 20px;
-    min-height: 20px;
-    max-height: 20px;
+  margin: 3px;
+  border-radius: var(--radius);
+  min-width: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  max-height: 20px;
 }
 
 .audio-menu .apps-container .app-volume .app-icon-container:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--base);
+  border: 1px solid var(--mauve);
+  background-color: var(--base);
 }
 
 /* App Volume Slider */
 .audio-menu .apps-container .app-volume .app-slider {
-    margin: 4px 0;
+  margin: 4px 0;
 }
 
 .audio-menu .apps-container .app-volume .app-slider::groove {
-    border: 1px solid var(--overlay1);
-    border-radius: var(--radius);
-    background-color: var(--mantle);
-    height: 18px;
+  border: 1px solid var(--overlay1);
+  border-radius: var(--radius);
+  background-color: var(--mantle);
+  height: 18px;
 }
 
 .audio-menu .apps-container .app-volume .app-slider::groove:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 .audio-menu .apps-container .app-volume .app-slider::sub-page {
-    margin: 5px;
-    border-radius: 4px;
-    background-color: var(--lavender);
-    height: 2px;
+  margin: 5px;
+  border-radius: 4px;
+  background-color: var(--lavender);
+  height: 2px;
 }
 
 .audio-menu .apps-container .app-volume .app-slider::handle {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /*---===< Notification Widget >===---*/
 
 .notification-widget .widget-container {
-    margin: 3px;
-    border-radius: var(--radius);
+    margin: 3px 3px 3px 2px;
+  border-radius: var(--radius);
 }
 
 .notification-widget .widget-container:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
 }
 
 .notification-widget .icon {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .notification-widget .icon:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .notification-widget .label {
-    color: var(--overlay1);
+  color: var(--overlay1);
 }
 
 .notification-widget .icon.new-notification {
-    color: var(--overlay2);
+  color: var(--overlay2);
 }
 
 .notification-widget .label.new-notification {
-    color: var(--mauve);
+  color: var(--mauve);
 }
 
 /* --------------------------------------------------------------------------------------------------- */
@@ -770,8 +770,8 @@ Example: "Windows Media" becomes "windows-media" */
 /* --------------------------------------------------------------------------------------------------- */
 
 .icon {
-    color: var(--text);
-    font-size: 20px;
+  color: var(--text);
+  font-size: 20px;
 }
 
 /* --------------------------------------------------------------------------------------------------- */
@@ -779,82 +779,82 @@ Example: "Windows Media" becomes "windows-media" */
 /* --------------------------------------------------------------------------------------------------- */
 
 .context-menu {
-    border: var(--widgetBorder);
-    border-radius: 10px;
-    background-color: var(--base);
+  border: var(--widgetBorder);
+  border-radius: 10px;
+  background-color: var(--base);
 }
 
 .context-menu::right-arrow {
-    padding-right: 6px;
-    width: 10px;
-    height: 10px;
-    color: var(--text);
+  padding-right: 6px;
+  width: 10px;
+  height: 10px;
+  color: var(--text);
 }
 
 .context-menu::separator {
-    margin: 4px 0;
-    background-color: var(--surface1);
-    height: 1px;
+  margin: 4px 0;
+  background-color: var(--surface1);
+  height: 1px;
 }
 
 /* Label */
 .context-menu::item,
 .context-menu .menu-checkbox {
-    margin: 2px;
-    border: 1px solid transparent;
-    border-radius: var(--radius);
-    padding: 4px;
-    color: var(--text);
+  margin: 2px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 4px;
+  color: var(--text);
 }
 
 .context-menu::item:selected,
 .context-menu .menu-checkbox:hover {
-    border: 1px solid var(--mauve);
-    background-color: var(--surface0);
-    color: var(--blue);
+  border: 1px solid var(--mauve);
+  background-color: var(--surface0);
+  color: var(--blue);
 }
 
 .context-menu::item:disabled {
-    color: var(--subtext0);
+  color: var(--subtext0);
 }
 
 .context-menu .menu-checkbox .checkbox {
-    margin: 2px;
-    border: none;
-    padding: 4px;
-    color: var(--text);
-    font-size: 12px;
+  margin: 2px;
+  border: none;
+  padding: 4px;
+  color: var(--text);
+  font-size: 12px;
 }
 
 .context-menu .menu-checkbox .checkbox:unchecked {
-    color: var(--subtext0);
+  color: var(--subtext0);
 }
 
 .context-menu .menu-checkbox .checkbox:hover {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .context-menu .submenu::item:disabled {
-    margin: 0;
-    padding-left: 16px;
+  margin: 0;
+  padding-left: 16px;
 }
 
 /* Checkbox */
 .context-menu .menu-checkbox .checkbox::indicator {
-    margin-right: 1px;
-    margin-left: 3px;
-    border: 1px solid transparent;
-    border-radius: 7px;
-    width: 12px;
-    height: 12px;
+  margin-right: 1px;
+  margin-left: 3px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  width: 12px;
+  height: 12px;
 }
 
 .context-menu .menu-checkbox .checkbox::indicator:unchecked {
-    background-color: var(--surface1);
-    color: var(--blue);
+  background-color: var(--surface1);
+  color: var(--blue);
 }
 
 .context-menu .menu-checkbox .checkbox::indicator:checked {
-    background-color: var(--mauve);
-    color: var(--blue);
+  background-color: var(--mauve);
+  color: var(--blue);
 }
