@@ -62,12 +62,10 @@
 .newMemberBadge_f80704,
 /* Hide thread suggestion in reply */
 .threadSuggestionBar__841c8,
-[aria-label="Open sticker picker"],
 [aria-label="Send a gift"],
 [aria-label="Help"],
 [aria-label="Checkpoint"],
-[aria-label="Start Video Call"],
-[aria-label="Apps"] {
+[aria-label="Start Video Call"] {
   display: none !important;
 }
 
