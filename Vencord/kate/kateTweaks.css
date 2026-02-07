@@ -21,7 +21,7 @@
   /*---===< FONT >===---*/
   --font: "JetBrains Mono";
   /*---===< COMPACT TABS >===---*/
-  --server-tabs: false;
+  --server-tabs: true;
   --dms-tabs: true;
 }
 
@@ -64,7 +64,6 @@
 .threadSuggestionBar__841c8,
 [aria-label="Send a gift"],
 [aria-label="Help"],
-[aria-label="Checkpoint"],
 [aria-label="Start Video Call"] {
   display: none !important;
 }
