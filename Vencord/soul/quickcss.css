@@ -1,0 +1,296 @@
+/*--------------------------===========================< GLOBAL CHANGES >===========================--------------------------*/
+
+/*---===< EXTERNAL SNIPPETS >===---*/
+
+/*snippets from #css-snippets and other places*/
+@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/IconRecolors.css");
+@import url("https://nspc911.github.io/themes/vencord/RefreshedSeamlessChatBar.theme.css");
+@import url('https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactTabs.css');
+
+/*snippets from https://github.com/AushevAhmad/awesome-css*/
+@import url("https://aushevahmad.github.io/awesome-css/modules/custom-bar-prompt.css");
+@import url("https://dablulite.github.io/css-snippets/TabsV2HomeIcon/import.css");
+
+/*---===< GLOBAL VARIABLES >===---*/
+:root:root {
+  /*---===< CUSTOM BAR PROMPT >===---*/
+  --prompt-text: "yap";
+  /*---===< CHANNEL HIGHLIGHTER >===---*/
+  --highlight-select: linear-gradient(40deg, #ca9ee63b 30%, #f4b8e43b);
+  --highlight-icon: #cba6f7;
+  /*---===< FONT >===---*/
+  --font: "JetBrains Mono";
+  /*---===< COMPACT TABS >===---*/
+  --server-tabs: false;
+  --dms-tabs: true;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-display: swap;
+  size-adjust: 90%;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v20/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+}
+
+/*---===< DECLUTTER DISCORD >===---*/
+
+/* No "New member" badge */
+.newMemberBadge_f80704,
+/* Hide thread suggestion in reply */
+.threadSuggestionBar__841c8,
+[aria-label="Open sticker picker"],
+[aria-label="Send a gift"],
+[aria-label="Help"],
+[aria-label="Checkpoint"],
+[aria-label="Start Video Call"],
+[aria-label="Apps"] {
+  display: none !important;
+}
+
+/* Compact Search when idle */
+[class$="-search"]>[class$="-searchBar"] {
+  width: 32px !important;
+  transition: background .25s ease,
+    width .25s ease,
+    border-color .25s ease;
+}
+
+[class$="-search"]>[class$="-searchBar"] .DraftEditor-root {
+  padding-right: 3px !important;
+}
+
+[class$="focused"]>[class$="-searchBar"],
+[class$="open"]>[class$="-searchBar"] {
+  width: 244px !important;
+  background: var(--background-gradient-low, var(--input-background-default));
+  border-color: var(--input-border-default);
+}
+
+[class$="-search"]>[class$="-searchBar"] [class$="iconLayout"] {
+  margin-right: 7px;
+}
+
+[class$="-search"] {
+  margin: 0 !important;
+}
+
+/*fix for midnight integrated title bar spacing*/
+.toolbar__9293f {
+  padding-right: 170px;
+}
+
+/*---===< CUSTOM EMOJI BUTTON >===---*/
+:root {
+  --customEmojiIconURL: url(https://cdn.discordapp.com/emojis/1217110775601172591.gif?size=240&quality=lossless);
+  --customEmojiIconMask: url(https://cdn.discordapp.com/emojis/1217110775601172591.gif?size=240&quality=lossless);
+}
+
+[class*=emojiButton] [class*=spriteColored] {
+  background: var(--customEmojiIconURL) center/contain no-repeat;
+}
+
+[class*=emojiButton] [class*=spriteGreyscale] {
+  mask: var(--customEmojiIconMask) center/contain no-repeat;
+}
+
+/*---===< CUSTOM TYPING INDICATOR >===---*/
+.typingDots_b88801>.ellipsis_b88801+.text_b88801 {
+  font-size: 0;
+  height: 16px;
+
+  >strong {
+    font-size: 12px;
+
+    &::after {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    &:last-child::after {
+      content: " is yapping...";
+    }
+
+    &:last-child:not(:first-child)::after {
+      content: " are yapping...";
+    }
+
+    &:nth-last-child(2)::after {
+      content: " and "
+    }
+
+    &:nth-last-child(3)::after {
+      content: ", ";
+    }
+  }
+
+  &:not(:has(>strong))::after {
+    font-size: 12px;
+    content: "Several people are yapping...";
+  }
+}
+
+/*---===< ACTIVITY LIST WIDTH FIX >===---*/
+.nowPlayingColumn__133bf {
+  min-width: 450px;
+}
+
+/*---===< CHATBAR BUTTON SCALE >===---*/
+.visual-refresh .button__74017,
+.buttonContents_e6e74f:not([class*="enabled__67645"]) {
+  transform: scale(1.2) !important;
+}
+
+.visual-refresh .spriteContainer__04eed {
+  transform: scale(1.3) !important;
+}
+
+/*---===< TRAFFIC LIGHT WINDOW CONTROLS >===---*/
+
+/* hide buttons in settings screens */
+.systemBar_c38106>div {
+  display: none;
+}
+
+.winButton_c38106>svg {
+  display: none;
+}
+
+.winButton_c38106 {
+  background: none !important;
+  width: 13px;
+  height: 13px;
+  padding: 0px 5px;
+}
+
+.winButton_c38106::after {
+  display: block;
+  content: '';
+  height: 13px;
+  width: 13px;
+  border-radius: 50px;
+  transition: all 100ms;
+  background-color: rgba(17, 17, 27, 0.2);
+}
+
+.winButton_c38106:hover::after {
+  min-height: 20px !important;
+}
+
+.winButtonClose_c38106:hover::after {
+  background-color: #f38ba8 !important;
+}
+
+.winButtonMinMax_c38106:nth-child(1):hover::after {
+  background-color: #f9e2af !important;
+}
+
+.winButtonMinMax_c38106:nth-child(2):hover::after {
+  background-color: #a6e3a1 !important;
+}
+
+/*--------------------------===========================< CHANNELS >===========================--------------------------*/
+
+/*---===< DASHLESS CHANNEL NAMES >===---*/
+@font-face {
+  font-family: "Twemoji Mozilla";
+  src: url("https://vendicated.github.io/random-files/Twemoji.Mozilla.ttf") format("truetype");
+  unicode-range: U+1F1E6-1F1FF;
+}
+
+@font-face {
+  font-family: "dashless";
+  size-adjust: 100%;
+  src: url("https://vendicated.github.io/random-files/Dashless.woff2") format("woff2");
+  unicode-range: U+002D;
+}
+
+[data-list-item-id^=channels___]:not([role=button]),
+[class^=titleWrapper]>h1,
+[id^=":r"]>h1,
+[class^=resultChannel],
+[class^=channelNameContainer_],
+[class^=searchAnswer_],
+.channelWithIcon,
+[class^=emptyChannelIcon_]+h3,
+[class^=emptyChannelIcon_]~[class*=description_],
+[class^=browser_] [class*=channelText_],
+[class^=returnButton_] [class^=text-],
+[class^=placeholder][class*=slateTextArea],
+[class^=auditLog_] [class^=overflowEllipsis_] strong,
+.vc-permviewer-perms-title,
+[class^=headerChannelContainer_]>div {
+  font-family: "Twemoji Mozilla", "dashless", var(--font-primary)
+}
+
+/*---===< CHANNEL SELECTOR FADE AND HIGHLIGHTED ICONS by Soul >===---*/
+#app-mount .containerDefault_c69b6d.selected_c69b6d .wrapper__2ea32 .link__2ea32 {
+  background: var(--highlight-select);
+  border-radius: 8px;
+  margin-left: 5px;
+}
+
+.modeUnreadImportant__2ea32 .icon__2ea32,
+#app-mount .containerDefault_c69b6d.selected_c69b6d .wrapper__2ea32 .icon__2ea32,
+#app-mount .containerDefault_c69b6d:hover .wrapper__2ea32 .icon__2ea32 {
+  color: var(--highlight-icon) !important;
+}
+
+/*---===< Changes to the channel list for better usability by aushevahmad >===---*/
+
+/* squish channel height/spacing */
+.wrapper__2ea32 .link__2ea32 {
+  padding-block: 0px;
+}
+
+/* shrink all channel icons */
+[class="iconContainer__2ea32"]>svg[role="img"] {
+  scale: 0.9;
+}
+
+/* shift category labels left*/
+.wrapper__29444 {
+  padding-left: 8px !important;
+}
+
+/* dim label when collapsed */
+[class="mainContent__29444"][aria-expanded="false"] {
+  opacity: 50% !important;
+}
+
+/*---===< HIDE RESTRICTED CHATBAR >===---*/
+[class*=channelTextAreaDisabled] {
+  display: none !important;
+}
+
+[class*=channelTextAreaDisabled] {
+  opacity: 0 !important;
+  position: absolute !important;
+  height: 0px !important;
+  width: 0px !important;
+  z-index: 0 !important;
+}
+
+/*--------------------------===========================< CONTEX MENU >===========================--------------------------*/
+
+/*--------------------------===========================< MARKDOWN >===========================--------------------------*/
+
+/*--------------------------===========================< USERS IN CHAT >===========================--------------------------*/
+
+/*--------------------------===========================< USER AREA >===========================--------------------------*/
+
+/* panel order */
+[class^="sidebar_"] section[class^="panels_"] {
+  display: flex;
+  flex-direction: column;
+
+  #vc-spotify-player {
+    order: -1;
+  }
+}
+
+/* voice connected padding fix */
+.container_e131a9 {
+  padding-top: 12px !important;
+}
+
+/*--------------------------===========================< THEME WORKSHOP >===========================--------------------------*/
