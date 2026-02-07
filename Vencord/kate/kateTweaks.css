@@ -68,38 +68,11 @@
   display: none !important;
 }
 
-/* Compact Search when idle */
-[class$="-search"]>[class$="-searchBar"] {
-  width: 32px !important;
-  transition: background .25s ease,
-    width .25s ease,
-    border-color .25s ease;
-}
-
-[class$="-search"]>[class$="-searchBar"] .DraftEditor-root {
-  padding-right: 3px !important;
-}
-
-[class$="focused"]>[class$="-searchBar"],
-[class$="open"]>[class$="-searchBar"] {
-  width: 244px !important;
-  background: var(--background-gradient-low, var(--input-background-default));
-  border-color: var(--input-border-default);
-}
-
-[class$="-search"]>[class$="-searchBar"] [class$="iconLayout"] {
-  margin-right: 7px;
-}
-
-[class$="-search"] {
-  margin: 0 !important;
-}
-
-/*fix for midnight integrated title bar spacing*/
+/*fix for midnight integrated title bar spacing
 .toolbar__9293f {
   padding-right: 170px;
 }
-
+*/
 /*---===< CUSTOM EMOJI BUTTON >===---*/
 :root {
   --customEmojiIconURL: url(https://cdn.discordapp.com/emojis/1217110775601172591.gif?size=240&quality=lossless);
@@ -186,27 +159,38 @@
 .winButton_c38106::after {
   display: block;
   content: '';
-  height: 13px;
-  width: 13px;
+  height: 14px;
+  width: 14px;
   border-radius: 50px;
   transition: all 100ms;
-  background-color: rgba(17, 17, 27, 0.2);
+  border: 1px solid rgba(17, 17, 27, 0.4);
+  min-width: 15px;
+  min-height: 15px;
 }
 
 .winButton_c38106:hover::after {
-  min-height: 20px !important;
+  min-height: 25px !important;
 }
 
-.winButtonClose_c38106:hover::after {
+.winButtonClose_c38106::after {
   background-color: #f38ba8 !important;
 }
 
-.winButtonMinMax_c38106:nth-child(1):hover::after {
+.winButtonMinMax_c38106:nth-child(1)::after {
   background-color: #f9e2af !important;
 }
 
-.winButtonMinMax_c38106:nth-child(2):hover::after {
+.winButtonMinMax_c38106:nth-child(2)::after {
   background-color: #a6e3a1 !important;
+}
+
+.clickable_c99c29, .vc-toolbox-icon {
+  color: var(--blue-4);
+  transition: all 100ms;
+}
+
+.clickable_c99c29:hover, .vc-toolbox-icon:hover {
+  scale: 120%;
 }
 
 /*--------------------------===========================< CHANNELS >===========================--------------------------*/

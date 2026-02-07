@@ -43,10 +43,10 @@ body {
   --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
 
   /* top bar options */
-  --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
-  --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
-  --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
-  --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+  --top-bar-height: 36px; /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+  --top-bar-button-position: hide; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+  --top-bar-title-position: left; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+  --subtle-top-bar-title: on; /* off: default, on: hide the icon and use subtle text color (like old discord) */
 
   /* window controls */
   --custom-window-controls: off; /* off: default window controls, on: custom window controls */
