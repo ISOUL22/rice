@@ -64,8 +64,8 @@ body {
   ); /* fixed color/gradient (css background property) */
 
   /* background image options */
-  --background-image: on; /* turn on to use a background image */
-  --background-image-url: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/cinnamoroll.png'); /* url of the background image */
+  --background-image: off; /* turn on to use a background image */
+  --background-image-url: url(''); /* url of the background image */
 
   /* transparency/blur options */
   /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
