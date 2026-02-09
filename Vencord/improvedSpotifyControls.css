@@ -1,0 +1,245 @@
+/**
+ * @name Improved Spotify Controls
+ * @description A visual overhaul of the Vencord Spotify Controls plugin.
+ * @author Soul
+ * @version v2.0
+ * @source https://github.com/ISOUL22/rice/blob/main/Vencord/spotifyPlayer.css
+*/
+
+:root {
+  --isc-bg: var(--bg-4, var(--background-base-low));
+
+  --isc-song-title: var(--accent-4, var(--text-strong));
+  --isc-icon-color: var(--text-1, var(--text-default));
+
+  --isc-progress-bar: var(--accent-2, hsl(141, 41%, 45%));
+  --isc-progress-bar-hover: var(--accent-2, hsl(141, 41%, 65%));
+
+  --isc-button-icon: var(--text-4, var(--text-default));
+  --isc-button-icon-hover: var(--text-1, var(--text-strong));
+  --isc-button-bg: transparent;
+  --isc-button-bg-hover: var(--hover, var(--background-mod-strong));
+
+  --isc-button-toggled-icon: var(--accent-4, hsl(141, 41%, 45%));
+  --isc-button-toggled-icon-hover: var(--accent-4, hsl(141, 41%, 65%));
+  --isc-button-bg-base: var(--accent-new, hsl(141, 41%, 45%));
+  --isc-button-toggled-bg: color-mix(in hsl, var(--isc-button-bg-base), transparent 90%);
+  --isc-button-toggled-bg-hover: color-mix(in hsl, var(--isc-button-bg-base), transparent 80%);
+}
+
+/*---===< COVER ART AS BACKGROUND >===---*/
+
+/* hide the original album image */
+#vc-spotify-info-wrapper > img,
+#vc-spotify-player:not(:has(#vc-spotify-album-expanded-wrapper)):hover #vc-spotify-album-image {
+  display: none;
+}
+
+/* album cover as background using pseudo-elements */
+#vc-spotify-player::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  filter: blur(2px) brightness(0.6);
+  transition: filter 0.3s ease;
+  /* subtle blur + darken for text readability */
+  border-radius: inherit;
+  background-image: var(--vc-spotify-track-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+/* layer all children above background */
+#vc-spotify-player {
+  transition: all 0.4s ease-in-out;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* fade towards bottom */
+#vc-spotify-player::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, transparent, var(--isc-bg));
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  content: '';
+}
+
+/*---===< ICONS >===---*/
+
+/* the song info */
+#vc-spotify-titles {
+  margin-left: 16px;
+}
+
+#vc-spotify-song-title {
+  color: var(--isc-song-title);
+  text-shadow: hsl(0, 0%, 25%) 1px 1px;
+}
+
+#vc-spotify-song-title::before,
+#vc-spotify-song-title + p::before,
+#vc-spotify-song-title + p + p::before {
+  position: absolute;
+  -webkit-mask-size: contain;
+  margin-left: -17px;
+  background-color: var(--isc-icon-color, white);
+  padding: 7px;
+  content: ' ';
+}
+
+#vc-spotify-song-title::before {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/music-note.svg');
+  margin-top: 3px;
+}
+
+#vc-spotify-song-title + p::before {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/user.svg');
+  margin-top: 0px;
+}
+
+#vc-spotify-song-title + p + p::before {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/disc-alt.svg');
+  margin-top: 2px;
+}
+
+/*---===< PROGRESS BAR >===---*/
+
+#vc-spotify-progress-bar {
+  margin-right: -15px;
+  margin-bottom: -15px;
+}
+
+#vc-spotify-player .bar_a562c8 {
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+#vc-spotify-player .barFill_a562c8 {
+  background-color: var(--isc-progress-bar);
+}
+
+#vc-spotify-progress-bar:hover .barFill_a562c8 {
+  background-color: var(--isc-progress-bar-hover);
+}
+
+#vc-spotify-progress-bar .grabber_a562c8 {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s;
+  margin-top: -8px;
+  margin-left: -8px;
+  border: solid 2px hsla(0, 0%, 0%, 0.3);
+  background-color: var(--isc-progress-bar-hover);
+  width: 16px;
+  height: 16px;
+}
+
+#vc-spotify-progress-bar:hover .grabber_a562c8 {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* hide durations */
+.vc-spotify-progress-time {
+  display: none;
+}
+
+/*---===< BUTTONS >===---*/
+.vc-spotify-button {
+  margin: 0px 15px;
+  border: none;
+  background-color: var(--isc-button-bg);
+  width: 40px;
+  height: 25px;
+  color: var(--isc-button-icon);
+}
+
+.vc-spotify-button:hover {
+  background-color: var(--isc-button-bg-hover);
+  color: var(--isc-button-icon-hover);
+}
+
+.vc-spotify-button-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.vc-spotify-shuffle-on,
+.vc-spotify-repeat-context,
+.vc-spotify-repeat-track {
+  background-color: var(--isc-button-toggled-bg);
+  color: var(--isc-button-toggled-icon);
+}
+
+.vc-spotify-shuffle-on:hover,
+.vc-spotify-repeat-context:hover,
+.vc-spotify-repeat-track:hover {
+  background-color: var(--isc-button-toggled-bg-hover);
+  color: var(--isc-button-toggled-icon-hover);
+}
+
+.vc-spotify-shuffle path,
+.vc-spotify-repeat path {
+  display: none;
+}
+
+svg.vc-spotify-shuffle,
+svg.vc-spotify-repeat {
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  background-color: currentColor;
+}
+
+svg.vc-spotify-shuffle {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/shuffle.svg');
+  -webkit-mask-size: 24px 24px;
+}
+
+svg.vc-spotify-repeat {
+  -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/loop.svg');
+  -webkit-mask-size: 20px 20px;
+}
+
+.vc-spotify-repeat-1 {
+  padding-right: 25px;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/*---===< FIXES FOR BASE DISCORD ELEMENTS >===---*/
+
+/* panel order */
+[class^='sidebar_'] section[class^='panels_'] {
+  display: flex;
+  flex-direction: column;
+
+  #vc-spotify-player {
+    order: -1;
+  }
+}
+
+/* transparent activity panel */
+.panels__5e434 div.panel__5dec7.activityPanel__5e434 {
+  background-color: transparent;
+}
+
+/* voice connected padding fix */
+.container_e131a9 {
+  padding-top: 12px !important;
+}
