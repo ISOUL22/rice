@@ -1,8 +1,8 @@
 /**
- * @name midnight (catppuccin mocha)
+ * @name Midnight - Catppuccin Mocha
  * @description a dark, customizable discord theme. based on catppuccin mocha theme (https://catppuccin.com).
  * @author refact0r
- * @version 2.1.0
+ * @version 2.1.1
  * @invite nz87hXyvcy
  * @website https://github.com/refact0r/midnight-discord
  * @source https://github.com/refact0r/midnight-discord/blob/master/themes/flavors/midnight-catppuccin-mocha.theme.css
@@ -23,7 +23,7 @@ body {
     --border-thickness: 2px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
 
     /* animation/transition options */
-    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --animations: off; /* off: disable animations/transitions, on: enable animations/transitions */
     --list-item-transition: 0.2s ease; /* transition for list items */
     --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
     --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
@@ -51,14 +51,14 @@ body {
 
     /* background image options */
     --background-image: on; /* off: no background image, on: enable background image (must set url variable below) */
-    --background-image-url: url('https://raw.githubusercontent.com/orangci/walls-catppuccin-mocha/master/jupiter.png'); /* url of the background image */
+    --background-image-url: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/jupiter.png'); /* url of the background image */
 
     /* transparency/blur options */
     /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
     --transparency-tweaks: on; /* off: no changes, on: remove some elements for better transparency */
     --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
     --panel-blur: on; /* off: no changes, on: blur the background of panels */
-    --blur-amount: 3px; /* amount of blur */
+    --blur-amount: 1px; /* amount of blur */
     --bg-floating: hsl(240, 21%, 15%); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
 
     /* chatbar options */
@@ -66,7 +66,7 @@ body {
     --chatbar-height: 47px; /* height of the chatbar (52px by default, 47px recommended for aligned, 56px recommended for separated) */
 
     /* other options */
-    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+    --small-user-panel: off; /* off: default user panel, on: smaller user panel like in old discord */
 }
 
 

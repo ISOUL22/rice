@@ -21,7 +21,7 @@
   /*---===< FONT >===---*/
   --font: "JetBrains Mono";
   /*---===< COMPACT TABS >===---*/
-  --server-tabs: false;
+  --server-tabs: true;
   --dms-tabs: true;
 }
 
@@ -45,38 +45,6 @@
 [aria-label="Start Video Call"],
 [aria-label="Apps"] {
   display: none !important;
-}
-
-/* Compact Search when idle */
-[class$="-search"]>[class$="-searchBar"] {
-  width: 32px !important;
-  transition: background .25s ease,
-    width .25s ease,
-    border-color .25s ease;
-}
-
-[class$="-search"]>[class$="-searchBar"] .DraftEditor-root {
-  padding-right: 3px !important;
-}
-
-[class$="focused"]>[class$="-searchBar"],
-[class$="open"]>[class$="-searchBar"] {
-  width: 244px !important;
-  background: var(--background-gradient-low, var(--input-background-default));
-  border-color: var(--input-border-default);
-}
-
-[class$="-search"]>[class$="-searchBar"] [class$="iconLayout"] {
-  margin-right: 7px;
-}
-
-[class$="-search"] {
-  margin: 0 !important;
-}
-
-/*fix for midnight integrated title bar spacing*/
-.toolbar__9293f {
-  padding-right: 170px;
 }
 
 /*---===< CUSTOM EMOJI BUTTON >===---*/
@@ -165,15 +133,18 @@
 .winButton_c38106::after {
   display: block;
   content: '';
-  height: 13px;
-  width: 13px;
+  height: 14px;
+  width: 14px;
   border-radius: 50px;
   transition: all 100ms;
-  background-color: rgba(17, 17, 27, 0.2);
+  background-color: var(--bg-3);
+  border: 1px solid rgb(39, 39, 55);
+  min-width: 14px;
+  min-height: 14px;
 }
 
 .winButton_c38106:hover::after {
-  min-height: 20px !important;
+  min-height: 25px !important;
 }
 
 .winButtonClose_c38106:hover::after {
@@ -278,19 +249,21 @@
 
 /*--------------------------===========================< USER AREA >===========================--------------------------*/
 
-/* panel order */
-[class^="sidebar_"] section[class^="panels_"] {
-  display: flex;
-  flex-direction: column;
-
-  #vc-spotify-player {
-    order: -1;
-  }
-}
+/*--------------------------===========================< MIDNIGHT OVERRIDES >===========================--------------------------*/
 
 /* voice connected padding fix */
 .container_e131a9 {
   padding-top: 12px !important;
+}
+
+/*fix for midnight integrated title bar spacing*/
+.toolbar__9293f {
+  padding-right: 170px;
+}
+
+/* remove channel tittle bottom border/divider */
+.title_f75fb0 {
+  border-bottom: none !important;
 }
 
 /*--------------------------===========================< THEME WORKSHOP >===========================--------------------------*/
