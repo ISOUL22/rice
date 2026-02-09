@@ -11,25 +11,24 @@
 */
 
 /* import theme modules */
-@import url("https://refact0r.github.io/midnight-discord/build/midnight.css");
+@import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 
 /* import font */
 @font-face {
-  font-family: "Baloo 2";
+  font-family: 'Baloo 2';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/baloo2/v21/wXK0E3kTposypRydzVT08TS3JnAmtdgazZpo_lc.woff2)
-    format("woff2");
+  src: url(https://fonts.gstatic.com/s/baloo2/v21/wXK0E3kTposypRydzVT08TS3JnAmtdgazZpo_lc.woff2) format('woff2');
   unicode-range:
-    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
-    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
-    U+2215, U+FEFF, U+FFFD;
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 body {
   /* font, change to '' for default discord font */
-  --font: "Baloo 2";
+  --font: 'Baloo 2';
+  --code-font: 'JetBrains Mono';
 
   /* sizes */
   --gap: 10px; /* spacing between panels */
@@ -54,12 +53,12 @@ body {
 
   /* dms button icon options */
   --dms-icon: on; /* set to default to use discord icon, on to use custom icon, off to disable completely */
-  --dms-icon-svg-url: url("https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/sun.svg"); /* icon svg url. MUST BE A SVG. */
+  --dms-icon-svg-url: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/sun.svg'); /* icon svg url. MUST BE A SVG. */
   --dms-icon-svg-size: 100%; /* size of the svg (css mask-size) */
   --dms-icon-color-before: var(--yellow-5); /* normal icon color */
   --dms-icon-color-after: var(--yellow-3); /* icon color when button is hovered/selected */
   --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
-  --dms-background-image-url: url("https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png"); /* url of the background image */
+  --dms-background-image-url: url('https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png'); /* url of the background image */
   --dms-background-image-size: cover; /* size of the background image (css background-size property) */
   --dms-background-color: linear-gradient(
     70,
@@ -70,7 +69,7 @@ body {
 
   /* background image options */
   --background-image: on; /* turn on to use a background image */
-  --background-image-url: url("https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/cinnamoroll.png"); /* url of the background image */
+  --background-image-url: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/cinnamoroll.png'); /* url of the background image */
 
   /* transparency/blur options */
   /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
@@ -93,7 +92,7 @@ body {
   --colors: on; /* turn off to use discord default colors */
 
   /* text colors */
-  --text-0: var(hsl(348, 39%, 38%)); /* text on colored elements */
+  --text-0: hsl(348, 39%, 38%); /* text on colored elements */
   --text-1: hsl(0, 0%, 100%); /* other normally white text */
   --text-2: hsl(353, 100%, 95%); /* headings and important text */
   --text-3: hsl(0, 0%, 100%); /* normal text */
@@ -103,10 +102,10 @@ body {
   /* background and dark colors */
   --bg-1: hsl(348, 49%, 62%); /* dark buttons when clicked */
   --bg-2: hsl(348, 35%, 52%); /* dark buttons */
-  --bg-3: hsl(348, 39%, 38%); /* spacing, secondary elements */
-  --bg-4: hsla(348, 33%, 48%, 0.75); /* main background color */
+  --bg-3: hsl(348, 33%, 48%); /* spacing, secondary elements */
+  --bg-4: hsla(348, 39%, 38%, 0.75); /* main background color */
   --hover: hsla(243, 28%, 72%, 0.7); /* channels and buttons when hovered */
-  --active: hsla(243, 28%, 72%,0.7); /* channels and buttons when clicked or selected */
+  --active: hsla(243, 28%, 72%, 0.7); /* channels and buttons when clicked or selected */
   --active-2: hsla(243, 28%, 72%, 0.7); /* extra state for transparent buttons */
   --message-hover: hsla(243, 28%, 72%, 0.5); /* messages when hovered */
 
@@ -116,7 +115,7 @@ body {
   --accent-3: var(--yellow-5); /* accent buttons */
   --accent-4: var(--yellow-3); /* accent buttons when hovered */
   --accent-5: var(--blue-5); /* accent buttons when clicked */
-  --accent-new: var(--accent-2); /* stuff that's normally red like mute/deafen buttons */
+  --accent-new: var(--yellow-3); /* stuff that's normally red like mute/deafen buttons */
   --mention: linear-gradient(
     to right,
     color-mix(in hsl, var(--accent-2), transparent 45%) 60%,
@@ -157,11 +156,11 @@ body {
   --red-4: hsl(343, 74%, 60%);
   --red-5: hsl(343, 74%, 55%);
 
-  --green-1: hsl(96, 22%, 57%);
-  --green-2: hsl(96, 22%, 52%);
-  --green-3: hsl(96, 22%, 47%);
-  --green-4: hsl(96, 22%, 42%);
-  --green-5: hsl(96, 22%, 37%);
+  --green-1: hsl(96, 22%, 67%);
+  --green-2: hsl(96, 22%, 62%);
+  --green-3: hsl(96, 22%, 57%);
+  --green-4: hsl(96, 22%, 52%);
+  --green-5: hsl(96, 22%, 47%);
 
   --blue-1: hsl(243, 28%, 72%);
   --blue-2: hsl(243, 28%, 69%);

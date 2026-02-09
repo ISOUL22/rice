@@ -3,49 +3,48 @@
 /*---===< EXTERNAL SNIPPETS >===---*/
 
 /*snippets from #css-snippets and other places*/
-@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/IconRecolors.css");
-@import url("https://nspc911.github.io/themes/vencord/RefreshedSeamlessChatBar.theme.css");
+@import url('https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/IconRecolors.css');
+@import url('https://nspc911.github.io/themes/vencord/RefreshedSeamlessChatBar.theme.css');
 @import url('https://raw.githubusercontent.com/Krammeth/css-snippets/refs/heads/main/CompactTabs.css');
 
 /*snippets from https://github.com/AushevAhmad/awesome-css*/
-@import url("https://aushevahmad.github.io/awesome-css/modules/custom-bar-prompt.css");
-@import url("https://dablulite.github.io/css-snippets/TabsV2HomeIcon/import.css");
+@import url('https://aushevahmad.github.io/awesome-css/modules/custom-bar-prompt.css');
+@import url('https://dablulite.github.io/css-snippets/TabsV2HomeIcon/import.css');
 
 /*---===< GLOBAL VARIABLES >===---*/
 :root:root {
   /*---===< CUSTOM BAR PROMPT >===---*/
-  --prompt-text: "yap";
+  --prompt-text: 'yap';
   /*---===< CHANNEL HIGHLIGHTER >===---*/
   --highlight-select: linear-gradient(60deg, #e9a95580 40%, #74a4ff80);
   --highlight-icon: #ffd035;
   /*---===< FONT >===---*/
-  --font: "JetBrains Mono";
+  --font: 'JetBrains Mono';
   /*---===< COMPACT TABS >===---*/
   --server-tabs: true;
   --dms-tabs: true;
 }
 
 @font-face {
-  font-family: "JetBrains Mono";
+  font-family: 'JetBrains Mono';
   font-display: swap;
   size-adjust: 90%;
-  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v20/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2)
-    format("woff2");
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v20/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
 }
 
 /*---===< VIGGY LOADER >===---*/
-[class^="content"]:has(> video[data-testid="app-spinner"]) {
+[class^='content']:has(> video[data-testid='app-spinner']) {
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0px;
     left: 0px;
     translate: 25%;
     width: 200px;
     height: 180px;
-    background-image: url("https://media.discordapp.net/stickers/1217112512374505613.png?size=320") !important;
+    background-image: url('https://media.discordapp.net/stickers/1217112512374505613.png?size=320') !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -68,31 +67,26 @@
   display: none !important;
 }
 
-/*fix for midnight integrated title bar spacing
-.toolbar__9293f {
-  padding-right: 170px;
-}
-*/
 /*---===< CUSTOM EMOJI BUTTON >===---*/
 :root {
   --customEmojiIconURL: url(https://cdn.discordapp.com/emojis/1217110775601172591.gif?size=240&quality=lossless);
   --customEmojiIconMask: url(https://cdn.discordapp.com/emojis/1217110775601172591.gif?size=240&quality=lossless);
 }
 
-[class*=emojiButton] [class*=spriteColored] {
+[class*='emojiButton'] [class*='spriteColored'] {
   background: var(--customEmojiIconURL) center/contain no-repeat;
 }
 
-[class*=emojiButton] [class*=spriteGreyscale] {
+[class*='emojiButton'] [class*='spriteGreyscale'] {
   mask: var(--customEmojiIconMask) center/contain no-repeat;
 }
 
 /*---===< CUSTOM TYPING INDICATOR >===---*/
-.typingDots_b88801>.ellipsis_b88801+.text_b88801 {
+.typingDots_b88801 > .ellipsis_b88801 + .text_b88801 {
   font-size: 0;
   height: 16px;
 
-  >strong {
+  > strong {
     font-size: 12px;
 
     &::after {
@@ -101,25 +95,25 @@
     }
 
     &:last-child::after {
-      content: " is yapping...";
+      content: ' is yapping...';
     }
 
     &:last-child:not(:first-child)::after {
-      content: " are yapping...";
+      content: ' are yapping...';
     }
 
     &:nth-last-child(2)::after {
-      content: " and "
+      content: ' and ';
     }
 
     &:nth-last-child(3)::after {
-      content: ", ";
+      content: ', ';
     }
   }
 
-  &:not(:has(>strong))::after {
+  &:not(:has(> strong))::after {
     font-size: 12px;
-    content: "Several people are yapping...";
+    content: 'Several people are yapping...';
   }
 }
 
@@ -130,7 +124,7 @@
 
 /*---===< CHATBAR BUTTON SCALE >===---*/
 .visual-refresh .button__74017,
-.buttonContents_e6e74f:not([class*="enabled__67645"]) {
+.buttonContents_e6e74f:not([class*='enabled__67645']) {
   transform: scale(1.2) !important;
 }
 
@@ -141,11 +135,11 @@
 /*---===< TRAFFIC LIGHT WINDOW CONTROLS >===---*/
 
 /* hide buttons in settings screens */
-.systemBar_c38106>div {
+.systemBar_c38106 > div {
   display: none;
 }
 
-.winButton_c38106>svg {
+.winButton_c38106 > svg {
   display: none;
 }
 
@@ -184,47 +178,38 @@
   background-color: #a6e3a1 !important;
 }
 
-.clickable_c99c29, .vc-toolbox-icon {
-  color: var(--blue-4);
-  transition: all 100ms;
-}
-
-.clickable_c99c29:hover, .vc-toolbox-icon:hover {
-  scale: 120%;
-}
-
 /*--------------------------===========================< CHANNELS >===========================--------------------------*/
 
 /*---===< DASHLESS CHANNEL NAMES >===---*/
 @font-face {
-  font-family: "Twemoji Mozilla";
-  src: url("https://vendicated.github.io/random-files/Twemoji.Mozilla.ttf") format("truetype");
+  font-family: 'Twemoji Mozilla';
+  src: url('https://vendicated.github.io/random-files/Twemoji.Mozilla.ttf') format('truetype');
   unicode-range: U+1F1E6-1F1FF;
 }
 
 @font-face {
-  font-family: "dashless";
+  font-family: 'dashless';
   size-adjust: 100%;
-  src: url("https://vendicated.github.io/random-files/Dashless.woff2") format("woff2");
+  src: url('https://vendicated.github.io/random-files/Dashless.woff2') format('woff2');
   unicode-range: U+002D;
 }
 
-[data-list-item-id^=channels___]:not([role=button]),
-[class^=titleWrapper]>h1,
-[id^=":r"]>h1,
-[class^=resultChannel],
-[class^=channelNameContainer_],
-[class^=searchAnswer_],
+[data-list-item-id^='channels___']:not([role='button']),
+[class^='titleWrapper'] > h1,
+[id^=':r'] > h1,
+[class^='resultChannel'],
+[class^='channelNameContainer_'],
+[class^='searchAnswer_'],
 .channelWithIcon,
-[class^=emptyChannelIcon_]+h3,
-[class^=emptyChannelIcon_]~[class*=description_],
-[class^=browser_] [class*=channelText_],
-[class^=returnButton_] [class^=text-],
-[class^=placeholder][class*=slateTextArea],
-[class^=auditLog_] [class^=overflowEllipsis_] strong,
+[class^='emptyChannelIcon_'] + h3,
+[class^='emptyChannelIcon_'] ~ [class*='description_'],
+[class^='browser_'] [class*='channelText_'],
+[class^='returnButton_'] [class^='text-'],
+[class^='placeholder'][class*='slateTextArea'],
+[class^='auditLog_'] [class^='overflowEllipsis_'] strong,
 .vc-permviewer-perms-title,
-[class^=headerChannelContainer_]>div {
-  font-family: "Twemoji Mozilla", "dashless", var(--font-primary)
+[class^='headerChannelContainer_'] > div {
+  font-family: 'Twemoji Mozilla', 'dashless', var(--font-primary);
 }
 
 /*---===< CHANNEL SELECTOR FADE AND HIGHLIGHTED ICONS by Soul >===---*/
@@ -248,7 +233,7 @@
 }
 
 /* shrink all channel icons */
-[class="iconContainer__2ea32"]>svg[role="img"] {
+[class='iconContainer__2ea32'] > svg[role='img'] {
   scale: 0.9;
 }
 
@@ -258,16 +243,16 @@
 }
 
 /* dim label when collapsed */
-[class="mainContent__29444"][aria-expanded="false"] {
+[class='mainContent__29444'][aria-expanded='false'] {
   opacity: 50% !important;
 }
 
 /*---===< HIDE RESTRICTED CHATBAR >===---*/
-[class*=channelTextAreaDisabled] {
+[class*='channelTextAreaDisabled'] {
   display: none !important;
 }
 
-[class*=channelTextAreaDisabled] {
+[class*='channelTextAreaDisabled'] {
   opacity: 0 !important;
   position: absolute !important;
   height: 0px !important;
@@ -283,9 +268,48 @@
 
 /*--------------------------===========================< USER AREA >===========================--------------------------*/
 
+/*--------------------------===========================< MIDNIGHT OVERRIDES >===========================--------------------------*/
+
+/* fix for midnight integrated title bar spacing
+.toolbar__9293f {
+  padding-right: 170px;
+}
+*/
+
+/* title bar buttons */
+.clickable_c99c29,
+.vc-toolbox-icon {
+  color: var(--blue-4);
+  transition: all 100ms;
+}
+
+.clickable_c99c29:hover,
+.vc-toolbox-icon:hover {
+  scale: 120%;
+}
+
+/* server/dm connection/stream badge */
+.iconBadge__650eb.isCurrentUserConnected__650eb {
+  background-color: var(--yellow-3);
+}
+
+/* speaking indicator */
+.theme-dark,
+.theme-light {
+  --status-speaking: var(--red-3) !important;
+}
+
+/* remove channel tittle bottom border/divider */
+.title_f75fb0 {
+  border-bottom: none !important;
+}
+
 /* voice connected padding fix */
-.container_e131a9 {
+.panels__5e434 .container_e131a9 {
   padding-top: 12px !important;
 }
 
-/*--------------------------===========================< THEME WORKSHOP >===========================--------------------------*/
+/* removed whatever that weird shadow thing is */
+.children__9293f::after {
+  display: none;
+}
