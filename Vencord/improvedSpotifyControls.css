@@ -12,6 +12,12 @@
   --isc-bg-blur: 2px;
   --isc-bg-brightness: 0.5;
 
+  /* use these to dertime the order of the panels, smaller = higher */
+  --ics-panel-order-activity: 1;
+  --ics-panel-order-spotify: 2;
+  --ics-panel-order-voicechat: 3;
+  --ics-panel-order-user: 4;
+
   --isc-song-title: var(--accent-4, var(--text-strong));
   --isc-icon-color: var(--text-1, var(--text-default));
 
@@ -33,7 +39,7 @@
 /*---===< COVER ART AS BACKGROUND >===---*/
 
 /* hide the original album image */
-#vc-spotify-info-wrapper>img,
+#vc-spotify-info-wrapper > img,
 #vc-spotify-player:not(:has(#vc-spotify-album-expanded-wrapper)):hover #vc-spotify-album-image {
   display: none;
 }
@@ -93,8 +99,8 @@
 }
 
 #vc-spotify-song-title::before,
-#vc-spotify-song-title+p::before,
-#vc-spotify-song-title+p+p::before {
+#vc-spotify-song-title + p::before,
+#vc-spotify-song-title + p + p::before {
   position: absolute;
   -webkit-mask-size: contain;
   margin-left: -17px;
@@ -108,12 +114,12 @@
   margin-top: 3px;
 }
 
-#vc-spotify-song-title+p::before {
+#vc-spotify-song-title + p::before {
   -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/user.svg');
   margin-top: 0px;
 }
 
-#vc-spotify-song-title+p+p::before {
+#vc-spotify-song-title + p + p::before {
   -webkit-mask-image: url('https://raw.githubusercontent.com/ISOUL22/rice/refs/heads/main/Vencord/assets/disc-alt.svg');
   margin-top: 2px;
 }
@@ -231,8 +237,21 @@ section.panels__5e434 {
   display: flex;
   flex-direction: column;
 
+  /* activity status */
+  .activityPanel__5e434 {
+    order: var(--ics-panel-order-activity);
+  }
+  /* spotify controls */
   #vc-spotify-player {
-    order: -1;
+    order: var(--ics-panel-order-spotify);
+  }
+  /* voicechat settings */
+  .wrapper_e131a9 {
+    order: var(--ics-panel-order-voicechat);
+  }
+  /* user settings */
+  .container__37e49 {
+    order: var(--ics-panel-order-user);
   }
 }
 
@@ -246,7 +265,7 @@ section.panels__5e434 {
   padding-top: 12px;
 }
 
-/* grow user panel to fit track image - i want this to be an optional thing but idk how yet, so if you want this uncomment it :D
+/* grow user panel to fit track image - i want this to be an optional thing but idk how yet, so if you want this uncomment it :D 
 .panels__5e434:has(#vc-spotify-player) {
   aspect-ratio: 1 / 1;
   min-height: auto;
@@ -262,4 +281,5 @@ section.panels__5e434 {
     padding-left: 24px;
     scale: 120%;
   }
-} */
+}
+*/
