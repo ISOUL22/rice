@@ -1,3 +1,11 @@
+/**
+ * @name Kate Tweaks
+ * @description A collection of small fixes and changes to Discord and Midnight.
+ * @author Rily | Midnight by refact0r
+ * @version v2.0
+ * @source https://github.com/ISOUL22/rice/blob/main/Vencord/kateTweaks.css
+*/
+
 /*--------------------------===========================< GLOBAL CHANGES >===========================--------------------------*/
 
 /*---===< EXTERNAL SNIPPETS >===---*/
@@ -16,8 +24,13 @@
   /*---===< CUSTOM BAR PROMPT >===---*/
   --prompt-text: 'yap';
   /*---===< CHANNEL HIGHLIGHTER >===---*/
-  --highlight-select: linear-gradient(60deg, #e9a95580 40%, #74a4ff80);
-  --highlight-icon: #ffd035;
+  --chs-color-1: hsla(34, 77%, 62%, 0.5);
+  --chs-color-2: hsla(219, 100%, 73%, 0.5);
+  --chs-icon-hover: hsl(46, 100%, 60%);
+  --chs-icon-scale: 0.9;
+  --chs-channel-spacing: 1px;
+  --chs-channel-size: 1px;
+  --chs-channel-selected: linear-gradient(60deg, var(--chs-color-1) 40%, var(--chs-color-2));
   /*---===< FONT >===---*/
   --font: 'JetBrains Mono';
   /*---===< COMPACT TABS >===---*/
@@ -213,28 +226,32 @@
 }
 
 /*---===< CHANNEL SELECTOR FADE AND HIGHLIGHTED ICONS by Soul >===---*/
-#app-mount .containerDefault_c69b6d.selected_c69b6d .wrapper__2ea32 .link__2ea32 {
-  background: var(--highlight-select);
+.containerDefault_c69b6d.selected_c69b6d .link__2ea32 {
+  background: var(--chs-channel-selected);
   border-radius: 8px;
   margin-left: 5px;
 }
 
 .modeUnreadImportant__2ea32 .icon__2ea32,
-#app-mount .containerDefault_c69b6d.selected_c69b6d .wrapper__2ea32 .icon__2ea32,
-#app-mount .containerDefault_c69b6d:hover .wrapper__2ea32 .icon__2ea32 {
-  color: var(--highlight-icon) !important;
+.containerDefault_c69b6d.selected_c69b6d .icon__2ea32,
+.containerDefault_c69b6d:hover .icon__2ea32 {
+  color: var(--chs-icon-hover) !important;
 }
 
-/*---===< Changes to the channel list for better usability by aushevahmad >===---*/
-
-/* squish channel height/spacing */
-.wrapper__2ea32 .link__2ea32 {
-  padding-block: 0px;
+/* channel spacing */
+.wrapper__2ea32 {
+  padding-block: var(--chs-channel-spacing);
 }
 
-/* shrink all channel icons */
-[class='iconContainer__2ea32'] > svg[role='img'] {
-  scale: 0.9;
+/* channel size*/
+.link__2ea32,
+#channels>ul>li.container__5b40b>ul>li>div>div {
+  padding-block: var(--chs-channel-size);
+}
+
+/* channel icon scale */
+.iconContainer__2ea32>svg[role="img"] {
+  scale: var(--chs-icon-scale);
 }
 
 /* shift category labels left*/
@@ -242,8 +259,8 @@
   padding-left: 8px !important;
 }
 
-/* dim label when collapsed */
-[class='mainContent__29444'][aria-expanded='false'] {
+/* dim channel name when collapsed */
+.mainContent__29444[aria-expanded="false"] {
   opacity: 50% !important;
 }
 
@@ -313,3 +330,7 @@
 .children__9293f::after {
   display: none;
 }
+
+/* #app-mount .bg__960e4 {
+  filter: brightness(0.7) saturate(1);
+} */
