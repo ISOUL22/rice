@@ -265,6 +265,12 @@ section.panels__5e434 {
   padding-top: 12px;
 }
 
+/* Nameplate */
+.panels__5e434:has(#vc-spotify-player)
+.container__37e49 .container__4bbc6 {
+  display: none;
+}
+
 /* grow user panel to fit track image - i want this to be an optional thing but idk how yet, so if you want this uncomment it :D 
 .panels__5e434:has(#vc-spotify-player) {
   aspect-ratio: 1 / 1;
