@@ -2,7 +2,7 @@
  * @name Improved Spotify Controls
  * @description A visual overhaul of the Vencord Spotify Controls plugin.
  * @author Soul
- * @version v3.0
+ * @version v3.1
  * @source https://github.com/ISOUL22/rice/blob/main/Vencord/spotifyPlayer.css
 */
 
@@ -35,6 +35,10 @@
   --isc-button-bg-base: var(--accent-new, hsl(141, 41%, 45%));
   --isc-button-toggled-bg: color-mix(in hsl, var(--isc-button-bg-base), transparent 90%);
   --isc-button-toggled-bg-hover: color-mix(in hsl, var(--isc-button-bg-base), transparent 80%);
+}
+
+body {
+  container-name: body;
 }
 
 /*---===< COVER ART AS BACKGROUND >===---*/
@@ -271,75 +275,94 @@ section.panels__5e434 {
 @property --ics-full-album-art {
   syntax: 'false | true';
   inherits: true;
-  initial-value: off;
+  initial-value: false;
 }
 
 @container body style(--ics-full-album-art: true) {
-  #vc-spotify-info-wrapper {
-    margin-top: 6px;
+  #vc-spotify-progress-bar {
+    transition: margin-top 0.3s ease;
+    will-change: margin-top;
   }
 
   #vc-spotify-progress-bar {
-    will-change: margin-top;
-    transition: margin-top 0.3s ease;
+    margin-top: 1cqw;
+  }
+
+  .vc-spotify-button-row {
+    margin-bottom: 0px;
   }
 
   .panels__5e434:has(#vc-spotify-player) {
-    aspect-ratio: 1 / 1;
-    min-height: auto;
-    max-height: max-content;
+    aspect-ratio: 1/1 !important;
+    min-height: auto !important;
+    max-height: max-content !important;
 
     #vc-spotify-song-title {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .vc-spotify-secondary-song-info {
-      font-size: 18px;
+      font-size: 14px;
     }
 
     #vc-spotify-song-title::before,
     #vc-spotify-song-title + p::before,
     #vc-spotify-song-title + p + p::before {
-      scale: 110%;
-      margin-top: 4px;
       padding: 7px;
     }
 
-    #vc-spotify-progress-bar {
-      margin-top: 60px;
+    #vc-spotify-song-title::before {
+      scale: 110%;
+      margin-top: 4px;
+    }
+
+    #vc-spotify-song-title + p::before,
+    #vc-spotify-song-title + p + p::before {
+      scale: 100%;
+      margin-top: 2px;
     }
   }
 
   .panels__5e434:has(#vc-spotify-player):has(.activityPanel__5e434):not(:has(.containerRtcOpened__37e49)) {
     #vc-spotify-progress-bar {
-      margin-top: 154px;
+      margin-top: 8cqw;
     }
   }
 
   .panels__5e434:has(#vc-spotify-player):has(.containerRtcOpened__37e49):not(:has(.activityPanel__5e434)) {
     #vc-spotify-progress-bar {
-      margin-top: 94px;
+      margin-top: 5cqw;
     }
   }
+
   .panels__5e434:has(#vc-spotify-player):not(:has(.containerRtcOpened__37e49)):not(:has(.activityPanel__5e434)) {
     #vc-spotify-progress-bar {
-      margin-top: if(style(--ics-panel-order-spotify: 4): 194px; else: 204px;);
+      margin-top: 12cqw;
     }
 
     #vc-spotify-song-title {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .vc-spotify-secondary-song-info {
-      font-size: 18px;
+      font-size: 14px;
     }
 
     #vc-spotify-song-title::before,
     #vc-spotify-song-title + p::before,
     #vc-spotify-song-title + p + p::before {
-      scale: 110%;
-      margin-top: 4px;
       padding: 7px;
+    }
+
+    #vc-spotify-song-title::before {
+      scale: 110%;
+      margin-top: 5px;
+    }
+
+    #vc-spotify-song-title + p::before,
+    #vc-spotify-song-title + p + p::before {
+      scale: 100%;
+      margin-top: 2px;
     }
   }
 }
