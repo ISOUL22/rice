@@ -2,7 +2,7 @@
  * @name Kate Tweaks
  * @description A collection of small fixes and changes to Discord and Midnight.
  * @author Rily | Midnight by refact0r
- * @version v2.0
+ * @version v2.1
  * @source https://github.com/ISOUL22/rice/blob/main/Vencord/kateTweaks.css
 */
 
@@ -31,18 +31,9 @@
   --chs-channel-spacing: 1px;
   --chs-channel-size: 1px;
   --chs-channel-selected: linear-gradient(60deg, var(--chs-color-1) 40%, var(--chs-color-2));
-  /*---===< FONT >===---*/
-  --font: 'JetBrains Mono';
   /*---===< COMPACT TABS >===---*/
   --server-tabs: true;
   --dms-tabs: true;
-}
-
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-display: swap;
-  size-adjust: 90%;
-  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v20/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
 }
 
 /*---===< VIGGY LOADER >===---*/
@@ -76,7 +67,9 @@
 .threadSuggestionBar__841c8,
 [aria-label="Send a gift"],
 [aria-label="Help"],
-[aria-label="Start Video Call"] {
+[aria-label="Start Video Call"],
+/* Hide Back/Forward buttons */
+.backForwardButtons__63abb {
   display: none !important;
 }
 
@@ -146,10 +139,8 @@
 }
 
 /*---===< TRAFFIC LIGHT WINDOW CONTROLS >===---*/
-
-/* hide buttons in settings screens */
-.systemBar_c38106 > div {
-  display: none;
+.trailing_c38106 {
+  margin-right: 8px;
 }
 
 .winButton_c38106 > svg {

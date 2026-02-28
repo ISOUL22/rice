@@ -2,7 +2,7 @@
  * @name Midnight - Kate
  * @description A pink, rounded theme with blue and yellow accents.
  * @author Rily | Midnight by refact0r
- * @version v3 | Midnight 2.1.1
+ * @version v3.1 | Midnight 2.1.1
  * @source https://github.com/refact0r/midnight-discord/blob/master/themes/flavors/midnight-catppuccin-mocha.theme.css
 */
 
@@ -12,13 +12,12 @@
 /* import font */
 @font-face {
   font-family: 'Baloo 2';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
   src: url(https://fonts.gstatic.com/s/baloo2/v21/wXK0E3kTposypRydzVT08TS3JnAmtdgazZpo_lc.woff2) format('woff2');
-  unicode-range:
-    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v20/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
 }
 
 body {
