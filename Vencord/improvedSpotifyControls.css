@@ -337,7 +337,7 @@ section.panels__5e434 {
 
   .panels__5e434:has(#vc-spotify-player):not(:has(.containerRtcOpened__37e49)):not(:has(.activityPanel__5e434)) {
     #vc-spotify-progress-bar {
-      margin-top: 12cqw;
+      margin-top: 10cqw;
     }
 
     #vc-spotify-song-title {
