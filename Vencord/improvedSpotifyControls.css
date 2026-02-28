@@ -367,3 +367,28 @@ section.panels__5e434 {
 .panels__5e434 .container_e131a9 {
   padding-top: 12px;
 }
+
+/* Nameplate */
+.panels__5e434:has(#vc-spotify-player)
+.container__37e49 .container__4bbc6 {
+  display: none;
+}
+
+/* grow user panel to fit track image - i want this to be an optional thing but idk how yet, so if you want this uncomment it :D 
+.panels__5e434:has(#vc-spotify-player) {
+  aspect-ratio: 1 / 1;
+  min-height: auto;
+  max-height: max-content;
+}
+
+.panels__5e434:has(#vc-spotify-player):not(:has(.activityPanel__5e434, .containerRtcOpened__37e49)) {
+  #vc-spotify-progress-bar {
+    margin-top: 180px;
+  }
+
+  #vc-spotify-info-wrapper {
+    padding-left: 24px;
+    scale: 120%;
+  }
+}
+*/
