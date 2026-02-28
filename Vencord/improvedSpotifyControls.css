@@ -2,7 +2,7 @@
  * @name Improved Spotify Controls
  * @description A visual overhaul of the Vencord Spotify Controls plugin.
  * @author Soul
- * @version v2.0
+ * @version v3.0
  * @source https://github.com/ISOUL22/rice/blob/main/Vencord/spotifyPlayer.css
 */
 
@@ -11,12 +11,13 @@
   /*blur can be performance intensive, to disable change this to 0px */
   --isc-bg-blur: 2px;
   --isc-bg-brightness: 0.5;
-
-  /* use these to dertime the order of the panels, smaller = higher */
-  --ics-panel-order-activity: 1;
-  --ics-panel-order-spotify: 2;
-  --ics-panel-order-voicechat: 3;
-  --ics-panel-order-user: 4;
+  /* if the panel should grow to fit the entire album art */
+  --ics-full-album-art: true;
+  /* use these to determine the order of the panels, smaller = higher */
+  --ics-panel-order-activity: 2; /* theme's default: 2 | discord's default 1 */
+  --ics-panel-order-spotify: 1; /* theme's default: 1 | discord's default 2 */
+  --ics-panel-order-voicechat: 3; /* theme's default: 3 | discord's default 3 */
+  --ics-panel-order-user: 4; /* theme's default: 4 | discord's default 4 */
 
   --isc-song-title: var(--accent-4, var(--text-strong));
   --isc-icon-color: var(--text-1, var(--text-default));
@@ -67,7 +68,8 @@
 
 /* layer all children above background */
 #vc-spotify-info-wrapper,
-.vc-spotify-button {
+.vc-spotify-button,
+.wrapper_e131a9 {
   position: relative;
   z-index: 1;
 }
@@ -243,7 +245,7 @@ section.panels__5e434 {
   }
   /* spotify controls */
   #vc-spotify-player {
-    order: var(--ics-panel-order-spotify);
+    order: var(--ics-panel-order-spotify) !important;
   }
   /* voicechat settings */
   .wrapper_e131a9 {
@@ -265,21 +267,79 @@ section.panels__5e434 {
   padding-top: 12px;
 }
 
-/* grow user panel to fit track image - i want this to be an optional thing but idk how yet, so if you want this uncomment it :D 
-.panels__5e434:has(#vc-spotify-player) {
-  aspect-ratio: 1 / 1;
-  min-height: auto;
-  max-height: max-content;
+/* grow user panel to fit track image */
+@property --ics-full-album-art {
+  syntax: 'false | true';
+  inherits: true;
+  initial-value: off;
 }
 
-.panels__5e434:has(#vc-spotify-player):not(:has(.activityPanel__5e434, .containerRtcOpened__37e49)) {
-  #vc-spotify-progress-bar {
-    margin-top: 180px;
-  }
-
+@container body style(--ics-full-album-art: true) {
   #vc-spotify-info-wrapper {
-    padding-left: 24px;
-    scale: 120%;
+    margin-top: 6px;
+  }
+
+  #vc-spotify-progress-bar {
+    will-change: margin-top;
+    transition: margin-top 0.3s ease;
+  }
+
+  .panels__5e434:has(#vc-spotify-player) {
+    aspect-ratio: 1 / 1;
+    min-height: auto;
+    max-height: max-content;
+
+    #vc-spotify-song-title {
+      font-size: 20px;
+    }
+
+    .vc-spotify-secondary-song-info {
+      font-size: 18px;
+    }
+
+    #vc-spotify-song-title::before,
+    #vc-spotify-song-title + p::before,
+    #vc-spotify-song-title + p + p::before {
+      scale: 110%;
+      margin-top: 4px;
+      padding: 7px;
+    }
+
+    #vc-spotify-progress-bar {
+      margin-top: 60px;
+    }
+  }
+
+  .panels__5e434:has(#vc-spotify-player):has(.activityPanel__5e434):not(:has(.containerRtcOpened__37e49)) {
+    #vc-spotify-progress-bar {
+      margin-top: 154px;
+    }
+  }
+
+  .panels__5e434:has(#vc-spotify-player):has(.containerRtcOpened__37e49):not(:has(.activityPanel__5e434)) {
+    #vc-spotify-progress-bar {
+      margin-top: 94px;
+    }
+  }
+  .panels__5e434:has(#vc-spotify-player):not(:has(.containerRtcOpened__37e49)):not(:has(.activityPanel__5e434)) {
+    #vc-spotify-progress-bar {
+      margin-top: if(style(--ics-panel-order-spotify: 4): 194px; else: 204px;);
+    }
+
+    #vc-spotify-song-title {
+      font-size: 20px;
+    }
+
+    .vc-spotify-secondary-song-info {
+      font-size: 18px;
+    }
+
+    #vc-spotify-song-title::before,
+    #vc-spotify-song-title + p::before,
+    #vc-spotify-song-title + p + p::before {
+      scale: 110%;
+      margin-top: 4px;
+      padding: 7px;
+    }
   }
 }
-*/
