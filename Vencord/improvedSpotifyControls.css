@@ -101,6 +101,7 @@ body {
 
 #vc-spotify-song-title {
   color: var(--isc-song-title);
+  font: 'gg sans' !important;
   text-shadow: hsl(0, 0%, 25%) 1px 1px;
 }
 
@@ -112,7 +113,7 @@ body {
   margin-left: -17px;
   background-color: var(--isc-icon-color, white);
   padding: 7px;
-  content: ' ';
+  content: '';
 }
 
 #vc-spotify-song-title::before {
@@ -236,42 +237,7 @@ svg.vc-spotify-repeat {
   font-size: 1em;
 }
 
-/*---===< FIXES FOR BASE DISCORD ELEMENTS >===---*/
-
-/* panel order */
-section.panels__5e434 {
-  display: flex;
-  flex-direction: column;
-
-  /* activity status */
-  .activityPanel__5e434 {
-    order: var(--ics-panel-order-activity);
-  }
-  /* spotify controls */
-  #vc-spotify-player {
-    order: var(--ics-panel-order-spotify) !important;
-  }
-  /* voicechat settings */
-  .wrapper_e131a9 {
-    order: var(--ics-panel-order-voicechat);
-  }
-  /* user settings */
-  .container__37e49 {
-    order: var(--ics-panel-order-user);
-  }
-}
-
-/* transparent activity panel */
-.panels__5e434 div.panel__5dec7.activityPanel__5e434 {
-  background-color: transparent;
-}
-
-/* voice connected padding fix */
-.panels__5e434 .container_e131a9 {
-  padding-top: 12px;
-}
-
-/* grow user panel to fit track image */
+/*---===< FULL ALBUM ART >===---*/
 @property --ics-full-album-art {
   syntax: 'false | true';
   inherits: true;
@@ -308,7 +274,7 @@ section.panels__5e434 {
     #vc-spotify-song-title::before,
     #vc-spotify-song-title + p::before,
     #vc-spotify-song-title + p + p::before {
-      padding: 7px;
+      padding-left: 7px;
     }
 
     #vc-spotify-song-title::before {
@@ -351,12 +317,12 @@ section.panels__5e434 {
     #vc-spotify-song-title::before,
     #vc-spotify-song-title + p::before,
     #vc-spotify-song-title + p + p::before {
-      padding: 7px;
+      padding-left: 7px;
     }
 
     #vc-spotify-song-title::before {
       scale: 110%;
-      margin-top: 5px;
+      margin-top: 0.35em;
     }
 
     #vc-spotify-song-title + p::before,
@@ -365,4 +331,39 @@ section.panels__5e434 {
       margin-top: 2px;
     }
   }
+}
+
+/*---===< FIXES FOR BASE DISCORD ELEMENTS >===---*/
+
+/* panel order */
+section.panels__5e434 {
+  display: flex;
+  flex-direction: column;
+
+  /* activity status */
+  .activityPanel__5e434 {
+    order: var(--ics-panel-order-activity);
+  }
+  /* spotify controls */
+  #vc-spotify-player {
+    order: var(--ics-panel-order-spotify) !important;
+  }
+  /* voicechat settings */
+  .wrapper_e131a9 {
+    order: var(--ics-panel-order-voicechat);
+  }
+  /* user settings */
+  .container__37e49 {
+    order: var(--ics-panel-order-user);
+  }
+}
+
+/* transparent activity panel */
+.panels__5e434 div.panel__5dec7.activityPanel__5e434 {
+  background-color: transparent;
+}
+
+/* voice connected padding fix */
+.panels__5e434 .container_e131a9 {
+  padding-top: 12px;
 }
