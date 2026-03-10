@@ -46,7 +46,7 @@
 }
 
 .yasb-bar {
-  border-top: 1px solid var(--surface1);
+  border-top: var(--widgetBorder);
   background-color: var(--base);
 }
 
@@ -71,7 +71,7 @@
 }
 
 /* -------------------------------------------------------------------------------------------------- */
-/* Widgets                                                                                            */
+/*                                              Widgets                                               */
 /* -------------------------------------------------------------------------------------------------- */
 
 /***-------------------------------      • Komorebi Widgets •      --------------------------------***/
@@ -119,9 +119,20 @@
   border: var(--buttonBorder);
   border-radius: var(--radius);
   background-color: var(--base);
-  padding: 8px 16px;
   color: var(--surface0);
   font-size: 32px;
+}
+
+.komorebi-control-menu .button.start {
+  padding: 8px 19px 8px 21px;
+}
+
+.komorebi-control-menu .button.stop {
+  padding: 8px 15px 8px 17px;
+}
+
+.komorebi-control-menu .button.reload {
+  padding: 8px 16px 8px 18px;
 }
 
 .komorebi-control-menu .button.active {
@@ -129,14 +140,12 @@
   background-color: var(--base);
 }
 
-.komorebi-control-menu .button.start.active {
+.komorebi-control-menu .button.start.active,
+.komorebi-control-menu .button.reload.active {
   color: var(--mauve);
 }
 .komorebi-control-menu .button.stop.active {
   color: var(--maroon);
-}
-.komorebi-control-menu .button.reload.active {
-  color: var(--mauve);
 }
 
 .komorebi-control-menu .button:disabled {
@@ -388,10 +397,11 @@ Example: "Windows Media" becomes "windows-media" */
   color: var(--subtext0);
   font-weight: 400;
   font-size: 20px;
+  padding-left: 2px;
 }
 
 .media-menu .btn.prev {
-  margin-left: 86px; /*centered buttons hack*/
+  margin-left: 74px;
 }
 
 .media-menu .btn.play {
@@ -701,7 +711,7 @@ Example: "Windows Media" becomes "windows-media" */
 
 .audio-menu .apps-container .app-volume .app-icon-container:hover {
   border: 1px solid var(--mauve);
-  background-color: var(--base);
+  background-color: var(--surface0);
 }
 
 /* App Volume Slider */

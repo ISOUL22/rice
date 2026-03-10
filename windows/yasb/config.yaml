@@ -83,9 +83,9 @@ widgets:
                     'grid',
                     'scrolling',
                     'vertical_stack',
-                    'horizontal_stack',
-                    'ultrawide_vertical_stack',
                     'right_main_vertical_stack',
+                    'horizontal_stack',
+                    'ultrawide_vertical_stack'
                 ]
             layout_icons:
                 bsp: "\uebeb"
@@ -165,10 +165,10 @@ widgets:
                 round_corners: true
                 round_corners_type: 'normal'
                 border_color: '#45475a'
-                alignment: 'left'
+                alignment: 'center'
                 direction: 'up'
                 offset_top: 2
-                offset_left: -303
+                offset_left: 0
                 thumbnail_corner_radius: 6
                 thumbnail_size: 100
                 max_title_size: 80
@@ -217,7 +217,7 @@ widgets:
         options:
             tooltip: false
             label: "<span>\udb83\ude17</span> {%a %b %d} <span>{icon}</span> {%I:%M %p}"
-            label_alt: '{%d.%m.%y %H:%M}'
+            label_alt: "{%d.%m.%y | %H:%M}"
             locale: ''
             update_interval: 1000
             timezones: []
