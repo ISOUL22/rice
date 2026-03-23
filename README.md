@@ -3,7 +3,7 @@ My personal themes and config files for various apps and other tools, as well of
 
 ## Not everything in this repo is made by me, for the base catppuccin versions of apps please see the [Official Repo](https://github.com/catppuccin/catppuccin).
 
-## Credits and Acknoledgements:
+## Credits and Acknowledgements:
 
 - ***Soulmate*** is my collections of tweaks and personal settings, it's meant to be used on top of Natsumi v6+, please do **NOT** report issues with *Soulmate* to Green.
     - ***Natsumi Browser*** is made by [Green](https://github.com/greeeen-dev/natsumi-browser)
