@@ -369,3 +369,9 @@ section.panels__5e434 {
 .panels__5e434 .container_e131a9 {
   padding-top: 12px !important;
 }
+
+/* disable nameplate when player is visible */
+.panels__5e434:has(#vc-spotify-player)
+.container__37e49 .container_df39b2 {
+  display: none;
+}
