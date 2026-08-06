@@ -250,10 +250,6 @@ svg.vc-spotify-repeat {
     will-change: margin-top;
   }
 
-  #vc-spotify-progress-bar {
-    margin-top: 1cqw;
-  }
-
   .vc-spotify-button-row {
     margin-bottom: 0px;
   }
@@ -289,21 +285,27 @@ svg.vc-spotify-repeat {
     }
   }
 
-  .panels__5e434:has(#vc-spotify-player):has(.activityPanel__5e434):not(:has(.containerRtcOpened__37e49)) {
+  .panels__5e434:has(#vc-spotify-player):has(.containerRtcOpened__37e49):has(.activityPanel__5e434) {
     #vc-spotify-progress-bar {
-      margin-top: 8cqw;
+      margin-top: 0.5svh;
     }
   }
 
   .panels__5e434:has(#vc-spotify-player):has(.containerRtcOpened__37e49):not(:has(.activityPanel__5e434)) {
     #vc-spotify-progress-bar {
-      margin-top: 5cqw;
+      margin-top: 5svh;
+    }
+  }
+
+  .panels__5e434:has(#vc-spotify-player):has(.activityPanel__5e434):not(:has(.containerRtcOpened__37e49)) {
+    #vc-spotify-progress-bar {
+      margin-top: 10svh;
     }
   }
 
   .panels__5e434:has(#vc-spotify-player):not(:has(.containerRtcOpened__37e49)):not(:has(.activityPanel__5e434)) {
     #vc-spotify-progress-bar {
-      margin-top: 10cqw;
+      margin-top: 15svh;
     }
 
     #vc-spotify-song-title {
@@ -360,10 +362,10 @@ section.panels__5e434 {
 
 /* transparent activity panel */
 .panels__5e434 div.panel__5dec7.activityPanel__5e434 {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 /* voice connected padding fix */
 .panels__5e434 .container_e131a9 {
-  padding-top: 12px;
+  padding-top: 12px !important;
 }
