@@ -140,7 +140,7 @@ body {
 #vc-spotify-player [class^=bar_] {
   background-color: hsla(0, 0%, 100%, 0.2);
 }
-/* .barFill_ec237e */
+
 #vc-spotify-player [class^=barFill_] {
   background-color: var(--isc-progress-bar);
 }
