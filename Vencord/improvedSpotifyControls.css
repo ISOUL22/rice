@@ -2,7 +2,7 @@
  * @name Improved Spotify Controls
  * @description A visual overhaul of the Vencord Spotify Controls plugin.
  * @author Soul
- * @version v3.3
+ * @version v3.3.1
  * @source https://github.com/ISOUL22/rice/blob/main/Vencord/spotifyPlayer.css
 */
 
@@ -339,8 +339,8 @@ svg.vc-spotify-repeat {
 
 /* panel order */
 section[class^=panels_] {
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
 
   /* activity status */
   [class^=activityPanel_] {
@@ -358,6 +358,11 @@ section[class^=panels_] {
   [class^=container_] {
     order: var(--ics-panel-order-user);
   }
+}
+
+/* undo avatar reposition - this a dumb fix, please come up with something better! */
+.wrapper_XpIUHy.avatar_g6VwXp {
+  order: unset !important;
 }
 
 /* transparent activity panel */
