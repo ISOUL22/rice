@@ -2,7 +2,7 @@
  * @name Improved Spotify Controls
  * @description A visual overhaul of the Vencord Spotify Controls plugin.
  * @author Soul
- * @version v3.2
+ * @version v3.3
  * @source https://github.com/ISOUL22/rice/blob/main/Vencord/spotifyPlayer.css
 */
 
@@ -285,25 +285,25 @@ svg.vc-spotify-repeat {
     }
   }
 
-  [class^=panels_]:has(#vc-spotify-player):has(.containerRtcOpened__37e49):has(.activityPanel__5e434) {
+  [class^=panels_]:has(#vc-spotify-player):has(.containerRtcOpened_g6VwXp):has(.activityPanel_pog62O) {
     #vc-spotify-progress-bar {
       margin-top: 0.5svh;
     }
   }
 
-  [class^=panels_]:has(#vc-spotify-player):has(.containerRtcOpened__37e49):not(:has(.activityPanel__5e434)) {
+  [class^=panels_]:has(#vc-spotify-player):has(.containerRtcOpened_g6VwXp):not(:has(.activityPanel_pog62O)) {
     #vc-spotify-progress-bar {
       margin-top: 5svh;
     }
   }
 
-  [class^=panels_]:has(#vc-spotify-player):has(.activityPanel__5e434):not(:has(.containerRtcOpened__37e49)) {
+  [class^=panels_]:has(#vc-spotify-player):has(.activityPanel_pog62O):not(:has(.containerRtcOpened_g6VwXp)) {
     #vc-spotify-progress-bar {
       margin-top: 10svh;
     }
   }
 
-  [class^=panels_]:has(#vc-spotify-player):not(:has(.containerRtcOpened__37e49)):not(:has(.activityPanel__5e434)) {
+  [class^=panels_]:has(#vc-spotify-player):not(:has(.containerRtcOpened_g6VwXp)):not(:has(.activityPanel_pog62O)) {
     #vc-spotify-progress-bar {
       margin-top: 15svh;
     }
@@ -351,27 +351,22 @@ section[class^=panels_] {
     order: var(--ics-panel-order-spotify) !important;
   }
   /* voicechat settings */
-  .wrapper_e131a9 {
+  [class^=wrapper_] {
     order: var(--ics-panel-order-voicechat);
   }
   /* user settings */
-  .container__37e49 {
+  [class^=container_] {
     order: var(--ics-panel-order-user);
   }
 }
 
 /* transparent activity panel */
-[class^=panels_] div.panel__5dec7[class^=activityPanel_] {
+[class^=panels_] div>[class^=panel_]>[class^=activityPanel_] {
   background-color: transparent !important;
-}
-
-/* voice connected padding fix */
-[class^=panels_] .container_e131a9 {
-  padding-top: 12px !important;
 }
 
 /* disable nameplate when player is visible */
 [class^=panels_]:has(#vc-spotify-player)
-.container__37e49 .container_df39b2 {
+[class^=container_]>[class^=container_] {
   display: none;
 }
